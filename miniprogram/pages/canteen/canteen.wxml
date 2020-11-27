@@ -1,1 +1,10 @@
-<button>食堂</button>
+<!--pages/Restaurant1/Restaurant1.wxml-->
+<view class="map">
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map1.png?sign=ee101e38e614a3208ef3759fbf7a3f77&t=1606446647" ></image>
+</view>
+<view class="store">
+    <view class="store_each" wx:for="{{array}}" wx:for-item="item">
+        <text bindtap="btnclick" data-text="{{item.name}}"  style='writing-mode:vertical-lr;position:fixed; width: {{item.width*2.34}} rpx;height: {{item.height*2.34}}rpx;left:{{item.locationx*2.34}}rpx;top:{{item.locationy*2.34}}rpx;font-size:10px;'>{{item.name}}</text>
+        <text bindtap="btnclick" data-text="{{item.name}}" style='writing-mode:vertical-lr;position:fixed; width: {{item.width*2.34}} rpx;height: {{item.height*2.34}}rpx;left:{{item.locationx*2.34}}rpx;top:{{item.locationy*2.34}}rpx;font-size:10px;'>{{item.name}}</text>
+    </view>
+</view>

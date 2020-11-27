@@ -1,0 +1,33 @@
+
+<view class="category-panel1">
+  <view class="category-panel2">
+   
+    <view bindtap='btnclick2' class="category-item">
+      <image class="category-item-image" src="../../../images/homepage/canting1.png" />
+      <text class="category-item-text">玫瑰园</text>
+    </view>
+    <view bindtap='btnclick2' class="category-item">
+      <image class="category-item-image" src="../../../images/homepage/canting1.png" />
+      <text class="category-item-text">玫瑰园二楼</text>
+    </view>
+    <view bindtap='btnclick2' class="category-item">
+      <image class="category-item-image" src="../../../images/homepage/canting1.png" />
+      <text class="category-item-text">紫荆园</text>
+    </view>
+  </view>
+
+  <view class="category-panel2">
+    <view bindtap='btnclick2' class="category-item">
+      <image class="category-item-image" src="../../../images/homepage/canting1.png" />
+      <text class="category-item-text">朝阳</text>
+    </view>
+    <view bindtap='btnclick2' class="category-item">
+      <image class="category-item-image" src="../../../images/homepage/canting1.png" />
+      <text class="category-item-text">京元</text>
+    </view>
+    <view bindtap='btnclick2' class="category-item">
+      <image class="category-item-image" src="../../../images/homepage/canting1.png" />
+      <text class="category-item-text">京元二楼</text>
+    </view>
+  </view>
+</view>

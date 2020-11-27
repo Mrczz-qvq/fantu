@@ -1,6 +1,6 @@
 // miniprogram/pages/browses/browses.js
+const db=wx.cloud.database();
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -13,162 +13,7 @@ Page({
 
 
    video_list:[
-    {
-      img_src:'https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=33406053,3345230210&fm=26&gp=0.jpg',
-      img_name:"花菜炒肉",
-      img_like:'../../images/menuicon/xin1.png',
-      img_dislike:'../../images/menuicon/cai.png',
-      img_tex1:"花菜炒肉1",
-      img_tex2:"花菜66666",
-      'show1': true,
-      'show2':true,
-      'zannum':50,
-      'cainum':60,
-      'talknum':4,
-      talks: [
-        {
-          avatarUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3474094557,370758738&fm=11&gp=0.jpg',
-          nickName: '小红',
-          content:'为什么这么好吃呢?',
-          talkTime: '5分钟前'
-        },
-        {
-          avatarUrl: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3510986481,3852924315&fm=111&gp=0.jpg',
-          nickName: '小天',
-          content:'为什么好吃呢?',
-          talkTime: '10分钟前'
-        },
-        {
-          avatarUrl: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1419628337,1603242413&fm=26&gp=0.jpg',
-          nickName: '小琴',
-          content:'就这',
-          talkTime: '11分钟前'
-        },
-        {
-          avatarUrl: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3782128483,794367969&fm=26&gp=0.jpg',
-          nickName: '小1',
-          content:'好',
-          talkTime: '15分钟前'
-        },
-      ],
-     },
-    {
-      img_src:'https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=107076554,4066867601&fm=26&gp=0.jpg',
-      img_name:"花饺",
-      img_like:'../../images/menuicon/xin1.png',
-      img_dislike:'../../images/menuicon/cai.png',
-      img_tex1:"花饺",
-      img_tex2:"花饺66666",
-      'show1': true,
-      'show2':true,
-      'zannum':50,
-      'cainum':60,
-      'talknum':4,
-      talks: [
-        {
-          avatarUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3474094557,370758738&fm=11&gp=0.jpg',
-          nickName: '小红',
-          content:'为什么这么好吃呢?',
-          talkTime: '5分钟前'
-        },
-        {
-          avatarUrl: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3510986481,3852924315&fm=111&gp=0.jpg',
-          nickName: '小天',
-          content:'为什么好吃呢?',
-          talkTime: '10分钟前'
-        },
-        {
-          avatarUrl: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1419628337,1603242413&fm=26&gp=0.jpg',
-          nickName: '小琴',
-          content:'就这',
-          talkTime: '11分钟前'
-        },
-        {
-          avatarUrl: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3782128483,794367969&fm=26&gp=0.jpg',
-          nickName: '小2',
-          content:'好',
-          talkTime: '15分钟前'
-        },
-      ],
-    },
-    {
-      img_src:'https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1290450967,363723296&fm=26&gp=0.jpg',
-      img_name:"莲藕炒肉",
-      img_like:'../../images/menuicon/xin1.png',
-      img_dislike:'../../images/menuicon/cai.png',
-      img_tex1:"莲藕炒肉1",
-      img_tex2:"莲藕炒肉66666",
-      'show1': true,
-      'show2':true,
-      'zannum':50,
-      'cainum':60,
-      'talknum':4,
-      talks: [
-        {
-          avatarUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3474094557,370758738&fm=11&gp=0.jpg',
-          nickName: '小红',
-          content:'为什么这么好吃呢?',
-          talkTime: '5分钟前'
-        },
-        {
-          avatarUrl: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3510986481,3852924315&fm=111&gp=0.jpg',
-          nickName: '小天',
-          content:'为什么好吃呢?',
-          talkTime: '10分钟前'
-        },
-        {
-          avatarUrl: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1419628337,1603242413&fm=26&gp=0.jpg',
-          nickName: '小琴',
-          content:'就这',
-          talkTime: '11分钟前'
-        },
-        {
-          avatarUrl: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3782128483,794367969&fm=26&gp=0.jpg',
-          nickName: '小3',
-          content:'好',
-          talkTime: '15分钟前'
-        },
-      ],
-    },
-    {
-      img_src:'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2312087456,4020377046&fm=26&gp=0.jpg',
-      img_name:"炒青菜",
-      img_like:'../../images/menuicon/xin1.png',
-      img_dislike:'../../images/menuicon/cai.png',
-      img_tex1:"炒青菜",
-      img_tex2:"炒青菜66666",
-      'show1': true,
-      'show2':true,
-      'zannum':50,
-      'cainum':60,
-      'talknum':4,
-      talks: [
-        {
-          avatarUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3474094557,370758738&fm=11&gp=0.jpg',
-          nickName: '小红',
-          content:'为什么这么好吃呢?',
-          talkTime: '5分钟前'
-        },
-        {
-          avatarUrl: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3510986481,3852924315&fm=111&gp=0.jpg',
-          nickName: '小天',
-          content:'为什么好吃呢?',
-          talkTime: '10分钟前'
-        },
-        {
-          avatarUrl: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1419628337,1603242413&fm=26&gp=0.jpg',
-          nickName: '小琴',
-          content:'就这',
-          talkTime: '11分钟前'
-        },
-        {
-          avatarUrl: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3782128483,794367969&fm=26&gp=0.jpg',
-          nickName: '小4',
-          content:'好',
-          talkTime: '15分钟前'
-        },
-      ],
-    },
+/*shopname:"店铺名*/
    ],
    pageY:'',    // 触摸起始高度坐标
    animation:'',  // 视频划动动画
@@ -184,118 +29,26 @@ Page({
      delay: 0 // 动画延迟参数
     })
     },
-    showTalks: function() {
-    // 加载数据
-    this.loadTalks();
-    // 设置动画内容为：使用绝对定位显示区域，高度变为100%
-    this.animation.bottom("0rpx").height("100%").step()
-    this.setData({
-     talksAnimationData: this.animation.export()
-    })
-    },
-    
-    hideTalks: function() {
-    // 设置动画内容为：使用绝对定位隐藏整个区域，高度变为0
-    this.animation.bottom("-100%").height("0rpx").step()
-    this.setData({
-     talksAnimationData: this.animation.export()
-    })
-    },
-    
-    // 加载数据
-    loadTalks: function() {
-    wx.showNavigationBarLoading();
-    let that = this;
-    this.setData({
-     talksAnimationData: that.animation.export()
-    })
-    wx.hideNavigationBarLoading();
-    },
-    
-    onScrollLoad: function() {
-    // 加载新的数据
-   // this.loadTalks();
-    },
-    //下拉评论框隐藏
-    touchStart: function(e) {
-    let touchStart = e.touches[0].clientY;
-    this.setData({
-     touchStart,
-    })
-    },
-    touchMove: function(e) {
-    let touchLength = e.touches[0].clientY - this.data.touchStart;
-    console.log(touchLength - 100)
-    if (touchLength > 100) {
-     this.animation.bottom("-100%").height("0rpx").step()
-     this.setData({
-     talksAnimationData: this.animation.export(),
-     })
-    }
-    },
-    //输入框失去焦点时触发
-    bindInputBlur: function(e) {
-    console.log(e)
-    this.data.inputValue = e.detail.value;
-    },
-    //点击发布，发布评论
-    faBu: function(e) {
-    const that = this;
-    const _index = e.currentTarget.dataset.index; 
-   
-    
-    let temp=that.data.video_list[0].talks;  
-    temp.unshift({
-     avatarUrl: 'https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2070453827,1163403148&fm=26&gp=0.jpg',
-     nickName: '饭饭',
-     content: this.data.inputValue,
-     talkTime: '刚刚'/*time*/
-    })
-    wx.showToast({
-      title:'s2s',
-      icon:'none',
-      duration:1000
-     })
-    that.data.inputValue = '';
-    that.setData({
-     talks: temp,
-     inputValue: that.data.inputValue,
-     talksAnimationData: that.animation.export()
-    })
-    },
 
-
-    fbuu: function (e) {
+    showTalks: function(e) {
       const vm = this;
       const that = this;
       const _index = e.currentTarget.dataset.index; 
-      let temp=vm.data.video_list[ 0].talks;   
-      wx.showToast({
-        title:'s2s',
-        icon:'none',
-        duration:1000
-       })
-      temp.unshift({
-       avatarUrl: 'https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2070453827,1163403148&fm=26&gp=0.jpg',
-       nickName: '饭饭',
-       content: this.data.inputValue,
-       talkTime: '刚刚'/*time*/
-      })
-      that.data.inputValue = '';
-      that.setData({
-       talks: temp,
-       inputValue: that.data.inputValue,
-       talksAnimationData: that.animation.export()
-      })
-     },
-
-
+      let _msg = [...vm.data.video_list]; // msg的引用 
+      console.log(_msg[_index]['img_name']) ;
+    wx.navigateTo({
+      url: '../../pages/browses/talks/talks?img_name='+_msg[_index]['img_name'],
+    })
+    
+    },
   zan: function (e) {
     const vm = this;
     const that = this;
     const _index = e.currentTarget.dataset.index; 
     let _msg = [...vm.data.video_list]; // msg的引用 
     _msg[_index]['show1'] = !vm.data.video_list[_index]['show1'];
+    console.log("点赞",_index)
+
     if(vm.data.video_list[_index]['show1'])
     {
       wx.showToast({
@@ -304,6 +57,27 @@ Page({
         duration:1000
        })
        _msg[_index]['zannum'] = vm.data.video_list[_index]['zannum']-1;
+       //云数据库赞-1
+       wx.cloud.callFunction({
+           name: 'zannum',// 云函数名称【刚刚创建的云函数文件的名字】
+           data: {dishid:_msg[_index]['_id'],isadd:0},
+           success: function (res) {
+              {
+                console.log(res.result)
+                console.log('赞的del调用成功')
+              }
+            },
+            fail: console.error
+         })
+
+         db.collection(getApp().globalData.useropenid).where({
+          img_name:_msg[_index]['img_name']
+         }).remove({
+            success: function(res) {
+              console.log('取消收藏 调用返回信息：',res)
+
+            }
+          })
     }
     else
     {
@@ -313,23 +87,70 @@ Page({
         duration:1000
        })
        _msg[_index]['zannum'] = vm.data.video_list[_index]['zannum']+1;
-       if(!vm.data.video_list[_index]['show2'])
+
+       //云数据库赞+1 
+       wx.cloud.callFunction({
+          name: 'zannum',// 云函数名称【刚刚创建的云函数文件的名字】
+          data: {dishid:_msg[_index]['_id'],isadd:1},
+          success: function (res) {
+            {
+              console.log(res.result)
+              console.log('赞的add调用成功')
+            }
+          },
+          fail: console.error
+        })
+
+        db.collection(getApp().globalData.useropenid).add({
+          // data 字段表示需新增的 JSON 数据
+          data: {  
+              show2:true,
+              store:_msg[_index]['store'],
+              talknum:_msg[_index]['talknum'],
+              cainum:_msg[_index]['cainum'],
+              img_name:_msg[_index]['img_name'],
+              img_src:_msg[_index]['img_src'],
+              img_tex2:_msg[_index]['img_tex2'],
+              talks:_msg[_index]['talks'],
+              zannum:_msg[_index]['zannum'],
+              img_dislike:"../../images/menuicon/cai.png",
+              img_like:"../../images/menuicon/xin1.png",
+              img_tex1:_msg[_index]['tex1'],
+              show1:true
+          }
+        }).then(res => {
+          console.log('收藏成功,调用返回信息:',res)
+        })
+
+       if(!vm.data.video_list[_index]['show2'])//点赞后 如果有踩则取消踩 踩数量-1
        {
         _msg[_index]['show2'] = !vm.data.video_list[_index]['show2'];
         _msg[_index]['cainum'] = vm.data.video_list[_index]['cainum']-1;
+
+        //云数据库踩-1 
+        wx.cloud.callFunction({
+          name: 'cainum',// 云函数名称【刚刚创建的云函数文件的名字】
+          data: {dishid:_msg[_index]['_id'],isadd:0},
+          success: function (res) {
+            {
+              console.log(res.result)
+              console.log('踩的del调用成功')
+            }
+          },fail: console.error
+        })
+
        }
     }
     vm.setData({
      video_list: _msg,
-     
     })
    },
+   
    cai: function (e) {
     const vm = this;
     const _index = e.currentTarget.dataset.index; 
     let _msg = [...vm.data.video_list]; // msg的引用 
     _msg[_index]['show2'] = !vm.data.video_list[_index]['show2'];
-   
     if(vm.data.video_list[_index]['show2'])
     {
       wx.showToast({
@@ -338,6 +159,20 @@ Page({
         duration:1000
        })
        _msg[_index]['cainum'] = vm.data.video_list[_index]['cainum']-1;
+
+      //云数据库踩-1 
+       wx.cloud.callFunction({
+        name: 'cainum',// 云函数名称【刚刚创建的云函数文件的名字】
+        data: {dishid:_msg[_index]['_id'],isadd:0},
+        success: function (res) {
+          {
+            console.log(res.result)
+            console.log('踩的del调用成功')
+          }
+        },
+        fail: console.error
+      })
+
     }
     else
     {
@@ -347,27 +182,66 @@ Page({
         duration:1000
        })
        _msg[_index]['cainum'] = vm.data.video_list[_index]['cainum']+1;
+
+       //云数据库踩+1 
+       wx.cloud.callFunction({
+        name: 'cainum',// 云函数名称【刚刚创建的云函数文件的名字】
+        data: {dishid:_msg[_index]['_id'],isadd:1},
+        success: function (res) {
+          {
+            console.log(res.result)
+            console.log('踩的add调用成功')
+          }
+        },fail: console.error
+      })
+       
        if(!vm.data.video_list[_index]['show1'])
        {
         _msg[_index]['show1'] = !vm.data.video_list[_index]['show1'];
         _msg[_index]['zannum'] = vm.data.video_list[_index]['zannum']-1;
+
+       //云数据库赞-1
+        wx.cloud.callFunction({
+          name: 'zannum',// 云函数名称【刚刚创建的云函数文件的名字】
+          data: {dishid:_msg[_index]['_id'],isadd:0},
+          success: function (res) {
+            {
+              console.log(res.result)
+              console.log('赞的del调用成功')
+            }
+          },fail: console.error
+        })
+
+        db.collection(getApp().globalData.useropenid).where({
+          img_name:_msg[_index]['img_name']
+         }).remove({
+            success: function(res) {
+              console.log('从数据库移除收藏 调用信息：',res)
+
+            }
+          })
        }
+
     }
     vm.setData({
      video_list: _msg
-   
     })
    },
 
-jmp_go: function() {
+jmp_go: function(e) {
+  const vm = this;
+  const that = this;
+  const _index = e.currentTarget.dataset.index; 
+  let _msg = [...vm.data.video_list]; // msg的引用 
   wx.showToast({
     title: '前往商家页面',
     icon:'none',
     duration:1000
    })
-  wx.navigateTo({
-    url: '../shop/shop'
-  })
+ wx.navigateTo({
+   url: '/pages/shop/shop?Shop='+_msg[_index]['store']
+ })
+
 },
  
   // 用户点击显示弹窗
@@ -404,9 +278,20 @@ jmp_go: function() {
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-this.setData({
-    windowHeight:wx.getSystemInfoSync().windowHeight
-   })
+    this.setData({
+        windowHeight:wx.getSystemInfoSync().windowHeight
+      })
+   db.collection('dish').aggregate().sample({
+     size: 20
+   }).end().then(res => {
+    this.setData({
+      video_list:res.list
+      }
+    )
+    console.log('本次菜单列表：',res.list)
+  })
+
+
   },
 
   /**

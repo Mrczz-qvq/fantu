@@ -1,1 +1,16 @@
-/* miniprogram/pages/canteen/canteen.wxss */
+/* pages/Restaurant1/Restaurant1.wxss */
+.map{
+  width: 750rpx;
+  height:1200rpx;
+  border: solid 1px black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.mapitem{
+  width: 750rpx;
+  height:1200rpx;
+  border: solid 1px black;
+  
+}
+

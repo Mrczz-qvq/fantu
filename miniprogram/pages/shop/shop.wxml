@@ -1,1 +1,49 @@
-<button>这里是餐厅</button>
+<view wx:if="{{img_src.length>0}}">
+  <image src="{{img_src}}" class="slide-image" />
+</view>
+<view wx:else>
+  <text>
+    图片尚未获取
+  </text>
+</view>
+<view class="goods_infor_top">
+  <view class="goods_title">
+   <text class="tname">商店名称:</text> <text class="tname">{{shopname}}</text>
+   <view class="goods_collect_btn" bindtap="gotocanteen">
+      <view >
+        <image src="../../images/shop/location.png" class="goods_collect_img"></image>
+      </view> 
+      <text>位置</text>
+    </view>  
+  </view>
+</view>
+
+
+<view class="goods_detail">
+  <view class="goods_detail_title">商品详情</view>
+</view>
+
+
+<scroll-view  scroll-y="true" bindscrolltolower="onScrollLoad"> 
+<view wx:if="{{goods.length>0}}"> 
+<view  wx:for="{{goods}}" wx:key="*this">
+
+  <view class="goodslist">
+    <image src='{{item.img_src}}' style='width:150px;height:112px;'class="goodslistmsg"></image>
+    <view class="list2"  style='width:150px;height:112px'>
+     <text class="goodsname" style='font-size:24rpx;'>{{item.img_name}}</text>
+     <text class="goodsp" style='font-size:22rpx;'>{{item.img_tex2}}</text>
+   </view>
+  
+</view>
+
+</view>
+
+</view>
+<view wx:else>
+<text>
+  商品详情尚未获取
+</text>
+</view>
+  </scroll-view>
+

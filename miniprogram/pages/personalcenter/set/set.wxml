@@ -1,0 +1,21 @@
+<view class="head">我的偏好设置</view>
+      <view class="head1"></view>
+<view class="body">
+  <view class="page-section">
+      
+      <view>
+        <checkbox-group bindchange="checkboxChange" >
+          <label class="body0" wx:for="{{liketags}}" wx:key="{{item.value}}" >
+            <view  class="body1">
+              <view class="weui-cell__hd">
+              <checkbox value="{{item.value}}" checked="{{item.istag}}"/>
+            </view>
+            <view class="weui-cell__bd">{{item.tagname}}</view>
+            </view>
+           
+           
+          </label>
+        </checkbox-group>
+      </view>
+    </view>
+</view>

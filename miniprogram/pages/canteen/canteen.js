@@ -1,18 +1,30 @@
-// miniprogram/pages/canteen/canteen.js
+// pages/Restaurant1/Restaurant1.js
+const db=wx.cloud.database();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+  array:
+  [ ]
   },
 
+  btnclick:function (event) {
+    console.log(event.currentTarget.dataset.text)
+    wx.navigateTo({
+      url: '/pages/shop/shop?Shop='+event.currentTarget.dataset.text
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    db.collection('store1').get().then(res => {
+      this.setData({
+        array:res.data
+      })
+      console.log(res.data)
+})
   },
 
   /**
@@ -63,4 +75,16 @@ Page({
   onShareAppMessage: function () {
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
 })

@@ -1,5 +1,5 @@
-<!-- 轮播图 -->
-
+<view  style='height:{{ windowHeight}}'>
+  <view class="head"></view>
 <view>
   <swiper indicator-dots="{{true}}" indicator-color="#f4c903" autoplay="true" circular="true">
     <block wx:for="{{banner}}" wx:key="banner">
@@ -9,49 +9,44 @@
     </block>
   </swiper>
 </view>
-
+<view class="head"></view>
 <!-- 搜索框 -->
 <view class="searchRoot">
   <input class="searchInput" bindinput="getSearchKey" placeholder="搜索菜品"></input>
   <image class="searchImg" bindtap="goSearch" src="../../images/homepage/search.png"></image>
 </view>
 
-
+<view class="head"></view>
 <view class="category-panel1">
-  <!--
-     <view bindtap='btnclick1' class="category-item">
-      <image class="category-item-image" src="/image/xiangji.png" />
-      <text class="category-item-text">扫一扫</text>
-    </view>
-  -->
   <view class="category-panel2">
    
     <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../images/homepage/canting.png" />
+      <image class="category-item-image" src="../../images/homepage/fan.png" />
       <text class="category-item-text">玫瑰园</text>
     </view>
-    <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../images/homepage/canting.png" />
+    <view bindtap='nodev' class="category-item">
+      <image class="category-item-image" src="../../images/homepage/fan1.png" />
       <text class="category-item-text">玫瑰园二楼</text>
     </view>
-    <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../images/homepage/canting.png" />
+    <view bindtap='nodev' class="category-item">
+      <image class="category-item-image" src="../../images/homepage/fan2.png" />
       <text class="category-item-text">紫荆园</text>
     </view>
   </view>
 
   <view class="category-panel2">
-    <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../images/homepage/canting.png" />
-      <text class="category-item-text">朝阳</text>
+    <view bindtap='nodev' class="category-item">
+      <image class="category-item-image" src="../../images/homepage/fan3.png" />
+      <text class="category-item-text">紫荆园二楼</text>
     </view>
-    <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../images/homepage/canting.png" />
+    <view bindtap='nodev' class="category-item">
+      <image class="category-item-image" src="../../images/homepage/fan4.png" />
       <text class="category-item-text">京元</text>
     </view>
-    <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../images/homepage/canting.png" />
-      <text class="category-item-text">其他餐厅食物</text>
+    <view bindtap='nodev' class="category-item">
+      <image class="category-item-image" src="../../images/homepage/fan5.png" />
+      <text class="category-item-text">其他餐厅</text>
     </view>
   </view>
+</view>
 </view>

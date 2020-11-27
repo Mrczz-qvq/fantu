@@ -1,1 +1,86 @@
-/* miniprogram/pages/search/search.wxss */
+.searchRoot {
+  background: rgb(255, 255, 255);
+  padding: 25rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.searchInput {
+  flex: 1;
+  height: 70rpx;
+  
+  
+  padding-left: 30rpx;
+  padding-bottom: 10rpx;
+  border: 1px solid #f4c903;
+  border-radius: 30rpx;
+}
+
+.tishi
+{
+  font-size: x-large;
+  padding-left: 5%;
+  
+}
+.searchImg {
+  width: 70rpx;
+  height: 70rpx;
+  margin: 0 15rpx;
+}
+.head{
+  position: fixed;
+  top:0%;
+  z-index: 999;
+  width: 100%;
+  height: 30px;
+}
+.head1{
+  top:0%;
+  width: 100%;
+  height: 30px;
+}
+
+.goodslist {
+  padding: 0 0px;
+  margin-top: 10px;
+  background-color: #FFF;
+  display: flex;
+  /*row 横向  column 列表  */
+  width: 100%;
+  flex-direction: row;
+}
+.list2 {
+  padding-top: 6px;
+  padding-right: 6px;
+  padding-bottom: 6px;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: column;
+}
+.goods_detail_title {
+  padding: 10px 0;
+  font-size: 14px;
+}
+.goodslistmsg{
+  height: 100px;
+  width: 120px;
+  padding-top: 6px;
+  padding-right: 6px;
+  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 50px;
+}
+.goodsname{
+  display:flex;
+align-items:center;
+justify-content:center;
+padding-top: 15px;
+}
+.goodsp{
+  display:flex;
+align-items:center;
+justify-content:center;
+padding-top: 20px;
+}

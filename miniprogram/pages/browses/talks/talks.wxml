@@ -1,0 +1,29 @@
+<view  wx:if="{{talks.length>0}}" class='talk-header'> 
+  <view class='talk-count'> {{talks.length}} 条评论</view> 
+</view>
+<view  wx:if="{{talks.length==0}}" class='talk-header'> 
+  <view class='talk-count'>还没有人评论，快来抢沙发吧！</view> 
+</view>
+<scroll-view  wx:if="{{talks.length>0}}" class='talk-body' scroll-y="true"  bindscrolltolower="onScrollLoad"> 
+<view class='talk-item' wx:for="{{talks}}" wx:key="*this"> 
+<view class='talk-item-left'>
+<image class='talk-item-face' src='{{item.avatarUrl}}'></image>
+</view>
+<view class='talk-item-right'> 
+<view class='right-left'> 
+<text class='talk-item-nickname'>{{item.nickName}}</text> 
+<text class='talk-item-time'>{{item.talkTime}}</text> 
+</view> 
+<text class='talk-item-content'>{{item.content}}</text>
+ 
+ 
+</view> 
+</view> 
+</scroll-view>
+
+
+
+<view class='footer_box'> 
+<input class='talk-input' type='text' value='{{inputValue}}' bindblur="bindInputBlur" placeholder='留下你的精彩评论~'></input> 
+<button class='fabu-input' bindtap='fabu'>发布</button> 
+</view>

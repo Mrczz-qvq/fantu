@@ -1,59 +1,48 @@
 {
   "pages": [
-    "pages/homepage/homepage",
     "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid",
-    "pages/im/im",
-    "pages/im/room/room",
+    "pages/homepage/homepage",
     "pages/browses/browses",
     "pages/allmap/allmap",
     "pages/personalcenter/personalcenter",
     "pages/shop/shop",
     "pages/canteen/canteen",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/personalcenter/footprint/footprint",
+    "pages/personalcenter/like/like",
+    "pages/personalcenter/set/set",
+    "pages/homepage/more/more",
+    "pages/browses/talks/talks"
+   
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#FFE2C8",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#FF7337",
     "navigationBarTitleText": "饭图",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#a9b7b7",
-    "selectedColor": "#f4ea2a",
+    "color": "black",
+    "selectedColor": "#FF7337",
     "borderStyle": "white",
     "list": [
+  
       {
-        "selectedIconPath": "images/menuicon/map1.png",
-        "iconPath": "images/menuicon/map.png",
-        "pagePath": "pages/allmap/allmap",
-        "text": "地图"
-      },
-      {
-        "selectedIconPath": "images/menuicon/home1.png",
-        "iconPath": "images/menuicon/home.png",
+        "selectedIconPath": "images/menuicon/home3.png",
+        "iconPath": "images/menuicon/home2.png",
         "pagePath": "pages/homepage/homepage",
         "text": "首页"
       },
       {
-        "selectedIconPath": "images/menuicon/browses1.png",
-        "iconPath": "images/menuicon/browses.png",
+        "selectedIconPath": "images/menuicon/ct1.png",
+        "iconPath": "images/menuicon/ct.png",
         "pagePath": "pages/browses/browses",
         "text": "推荐"
       },
       {
-        "selectedIconPath": "images/menuicon/user1.png",
-        "iconPath": "images/menuicon/user.png",
+        "selectedIconPath": "images/menuicon/user3.png",
+        "iconPath": "images/menuicon/user2.png",
         "pagePath": "pages/personalcenter/personalcenter",
         "text": "个人中心"
       }

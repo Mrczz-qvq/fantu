@@ -1,0 +1,20 @@
+<viwe class="head"> 
+  <text class="headtop">足迹(未完成版)</text>
+</viwe>
+<view class="head1">
+
+</view>
+<scroll-view  scroll-y="true" bindscrolltolower="onScrollLoad"> 
+<view  wx:for="{{shops}}" wx:key="*this">
+
+  <view class="goodslist" bindtap="goshop">
+    <image src='{{item.shopsrc}}' class="goodslistmsg"></image>
+    <view class="list2">
+      <text class="goodsp">{{item.shoplocation}}</text>
+     <text class="goodsname">{{item.shopname}}</text>
+   </view>
+ 
+</view>
+
+</view>
+ </scroll-view>
