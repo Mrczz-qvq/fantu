@@ -8,8 +8,9 @@ Page({
   array1:[],
   array0:[],
   array:[],
-  highlight:'',
-  storenow:''
+  highlight:'',  
+  canteennum:'', //当前食堂序号）
+  storenow:''//当前对应数据库
   },
 
   btnclick:function (event) {
@@ -22,13 +23,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (event) {
+    this.setData({
+      highlight:event.highlight,//接受其他页参数：高亮商家和当前食堂序号
+      canteennum:event.canteennum,
+      storenow:'store'+event.canteennum  //当前数据库
+    })
     var that=this
-    db.collection('store1').get().then(res => {
+
+    console.log('当前食堂：canteen'+this.data.canteennum)
+    console.log('当前数据库：',this.data.storenow)
+
+    db.collection(this.data.storenow).get().then(res => {
       this.setData({
         array1:res.data
       })
         console.log('第一次获取店铺：',res.data)
-        db.collection('store1').skip(20).get().then(res => { 
+        
+        db.collection(this.data.storenow).skip(20).get().then(res => { 
           that.setData({
             array0:res.data
           })
@@ -41,12 +52,9 @@ Page({
         })
     })
 
-    this.setData({
-      highlight:event.highlight,//接受参数：高亮商家
-      canteennow:event.canteennum
-    })
+
     console.log('高亮：',this.data.highlight)
-    console.log('食堂序号：',this.data.canteennow)
+    console.log('食堂序号：',this.data.canteennum)
   },
 
   /**

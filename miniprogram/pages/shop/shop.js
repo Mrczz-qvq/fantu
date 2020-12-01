@@ -8,28 +8,18 @@ Page({
    */
   data: {
     shopname:"",
+    canteennum:"",
     shopmsg:null,
     img_src:null,
-    shopdec:"食惠快餐是一家主营快餐的店铺,这里有许多种类的荤菜和素菜,方便快捷",
-    imgUrls: [
-      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3238431746,4177294693&fm=26&gp=0.jpg',
-      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3482112846,1616623641&fm=26&gp=0.jpg',
-      'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
-  ],
-    indicatorDots: true,
-    vertical: false,
-    autoplay: true,
-    interval: 3000,
-    duration: 1200,
+    shopdec:"",
     iscollect: true,
     goods:[
-     
     ]
   },
 gotocanteen:function(event){
   console.log('传参到餐厅页面的参数:',event.currentTarget.dataset.text)
   wx.navigateTo({
-      url: '../../pages/canteen/canteen?highlight='+event.currentTarget.dataset.text
+      url: '../../pages/canteen/canteen?highlight='+event.currentTarget.dataset.text+'&canteennum='+'1' //代写入 传递高亮的店名称和所在食堂的序号
     })
   },
   /**
@@ -42,6 +32,7 @@ gotocanteen:function(event){
       console.log('获取shop参数:',options.Shop)
       that.setData({
         shopname:options.Shop,
+        canteennum:options.canteennum
       })
     }
     db.collection('dish').where({
