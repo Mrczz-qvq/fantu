@@ -14,9 +14,9 @@ Page({
   },
 
   btnclick:function (event) {
-    console.log('传参给shop页点击的商店名字:',event.currentTarget.dataset.text)
+    console.log('传参给shop页点击的商店名字和当前餐厅序号:',event.currentTarget.dataset.text,"序号:",this.data.canteennum)
     wx.navigateTo({
-      url: '/pages/shop/shop?Shop='+event.currentTarget.dataset.text
+      url: '/pages/shop/shop?Shop='+event.currentTarget.dataset.text+'&canteennum='+this.data.canteennum
     })
   },
   /**

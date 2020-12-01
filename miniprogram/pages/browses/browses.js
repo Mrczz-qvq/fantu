@@ -240,7 +240,7 @@ Page({
       duration:1000
     })
   wx.navigateTo({
-    url: '/pages/shop/shop?Shop='+_msg[_index]['store']
+    url: '/pages/shop/shop?Shop='+_msg[_index]['store']+'&canteennum='+"1"
   })
   },
  
