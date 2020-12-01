@@ -190,12 +190,17 @@ Page({
   },
 
 
-  //菜品浏览
-  btnclick2: function() {
+
+  btnclick1: function() {
     wx.navigateTo({
-      url: '../canteen/canteen'
+      url: '../canteen/canteen?canteennum='+'1'
     })
   },
+  btnclick2: function() {
+    wx.navigateTo({
+        url: '../canteen/canteen?canteennum='+'2'
+      })
+    },
 
 
 uploadphoto:function () {

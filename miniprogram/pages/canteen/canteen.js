@@ -9,6 +9,7 @@ Page({
   array0:[],
   array:[],
   highlight:'',
+  storenow:''
   },
 
   btnclick:function (event) {
@@ -41,10 +42,11 @@ Page({
     })
 
     this.setData({
-      highlight:event.highlight//返回改菜品的_id（目前只能返回一个）
+      highlight:event.highlight,//接受参数：高亮商家
+      canteennow:event.canteennum
     })
     console.log('高亮：',this.data.highlight)
-
+    console.log('食堂序号：',this.data.canteennow)
   },
 
   /**
