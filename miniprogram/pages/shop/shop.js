@@ -41,7 +41,7 @@ gotocanteen:function(event){
     .get({
       success: function(res) {
         // res.data 是包含以上定义的一条记录的数组
-        console.log("在dish中搜索到商品：",res.data)
+        console.log("在dishes中搜索到商品：",res.data)
         that.setData({
           goods:res.data//返回改菜品的_id（目前只能返回一个）
         })
