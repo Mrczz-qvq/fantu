@@ -37,6 +37,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+show:function(){
+wx.navigateTo({
+  url: '../../pages/homepage/more/more',
+})
+},
+
   nodev:function()
   {
     wx.showToast({

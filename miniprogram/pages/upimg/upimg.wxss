@@ -1,1 +1,46 @@
-/* miniprogram/pages/upimg/upimg.wxss */
+.text1{
+  font-size: x-large;
+}
+.upimg{
+  width: 40vw;
+  
+}
+.ihead{
+  display: flex;    /*设置显示样式**/
+  align-items: center;    /**子view垂直居中*/
+  vertical-align: center; /**垂直居中*/
+  justify-content: center; /**内容居中*/
+  margin-top: 50rpx;
+}
+.body1{
+  display: flex;    /*设置显示样式**/
+  align-items: center;    /**子view垂直居中*/
+  vertical-align: center; /**垂直居中*/
+  justify-content: center; /**内容居中*/
+  font-size: x-large;
+  margin-top: 30rpx;
+}
+.body2{
+  display: flex;    /*设置显示样式**/
+  align-items: center;    /**子view垂直居中*/
+  vertical-align: center; /**垂直居中*/
+  justify-content: center; /**内容居中*/
+  font-size: x-large;
+  margin-top: 40rpx;
+}
+.btnup{      
+  position: fixed;    
+  margin: 0px auto;  
+}
+
+.btnview{
+  width: 100%;
+  bottom: 0%;
+  margin-top: 300rpx;
+}
+.nameinput{
+  height: 80rpx; 
+  border-bottom: 2px solid #f4c903;
+  width: 40%;
+  text-align: center;
+}
