@@ -11,6 +11,9 @@ Page({
       foodname:"",
       inputvaule:"",
       imgData: [],
+      details:"",
+      maxNumber:30,//可输入最大字数
+     number: 0,//已输入字数
 
 
     multiIndex:[0,0],
@@ -126,5 +129,19 @@ Page({
       urls: imgs
     })
   },
+
+  bindTextAreaBlur: function(e) {
+    console.log(e.detail.value);
+    var that = this;
+    that.setData({
+      details: e.detail.value
+    });
+    let value = e.detail.value;//获取textarea的内容，
+    let len = value.length;//获取textarea的内容长度
+    this.setData({
+      'number': len
+    })
+  },
+
 
 })
