@@ -1,8 +1,31 @@
-<view class="section">
-  <view class="section__title">省市二级联动demo</view>
+<view style=" height: 100vh;" >
+  <view class="ihead" bindtap="uploadPhoto">
+  <image src="{{imgsrctest}}" class="upimgs"  mode="aspectFit" bindtap="previewImg"></image>
+</view>
+
+
+
+<view class="body1">
+  <view class="section">
   <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
     <view class="picker">
-      当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
+    <text calss="text1"> 菜品位置选择：{{multiArray[0][multiIndex[0]]}} | {{multiArray[1][multiIndex[1]]}}</text>
+      
     </view>
   </picker>
+</view>
+</view>
+
+
+
+<view class="body2">
+    <input class="nameinput" bindinput="getfoodname" placeholder="菜品名称"></input>
+</view>
+<view>
+  菜名:{{ inputvaule}}//
+</view>
+<view class="btnview">
+  <button type="primary" calss="btnup">上传</button>
+</view>
+
 </view>

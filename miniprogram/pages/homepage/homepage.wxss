@@ -29,7 +29,7 @@
 }
 
 .category-panel1 {
-  height: 45vh;
+  height: 54vh;
   width: auto;
   display: flex;
   color: #666;

@@ -24,11 +24,11 @@
       <image class="category-item-image" src="../../images/homepage/fan.png"  mode="aspectFit" />
       <text class="category-item-text">玫瑰园</text>
     </view>
-    <view bindtap='btnclick2' class="category-item">
+    <view bindtap='nodev' class="category-item">
       <image class="category-item-image" src="../../images/homepage/fan1.png" mode="aspectFit"/>
       <text class="category-item-text">玫瑰园二楼</text>
     </view>
-    <view bindtap='nodev' class="category-item">
+    <view bindtap='show' class="category-item">
       <image class="category-item-image" src="../../images/homepage/fan2.png" mode="aspectFit"/>
       <text class="category-item-text">紫荆园</text>
     </view>
@@ -45,9 +45,28 @@
     </view>
     <view bindtap='nodev' class="category-item">
       <image class="category-item-image" src="../../images/homepage/fan5.png" mode="aspectFit"/>
-      <text class="category-item-text">其他餐厅</text>
+      <text class="category-item-text">京元</text>
     </view>
   </view> 
+
+
+  <view class="category-panel2">
+   
+   <view bindtap='nodev' class="category-item">
+     <image class="category-item-image" src="../../images/homepage/fan3.png"  mode="aspectFit" />
+     <text class="category-item-text">朝阳</text>
+   </view>
+   <view bindtap='nodev' class="category-item">
+     <image class="category-item-image" src="../../images/homepage/fan6.png" mode="aspectFit"/>
+     <text class="category-item-text">丁香园</text>
+   </view>
+   <view bindtap='nodev' class="category-item">
+     <image class="category-item-image" src="../../images/homepage/fan7.png" mode="aspectFit"/>
+     <text class="category-item-text">丁香二楼</text>
+   </view>
+ </view>
+
+
 </view>
 
 </view>
