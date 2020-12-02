@@ -19,7 +19,7 @@ Page({
 gotocanteen:function(event){
   console.log('传参到餐厅页面的参数:',event.currentTarget.dataset.text)
   wx.navigateTo({
-      url: '../../pages/canteen/canteen?highlight='+event.currentTarget.dataset.text+'&canteennum='+'1' //代写入 传递高亮的店名称和所在食堂的序号
+      url: '../../pages/canteen/canteen?highlight='+event.currentTarget.dataset.text+'&canteennum='+this.data.canteennum // 传递高亮的店名称和所在食堂的序号
     })
   },
   /**
@@ -29,43 +29,45 @@ gotocanteen:function(event){
     var that = this
     if(options.Shop)
     {
-      console.log('获取shop参数:',options.Shop)
+      console.log('获取当前超市名称：shop参数:',options.Shop,'获取当前食堂序号：canteennum参数:',options.canteennum)
       that.setData({
         shopname:options.Shop,
-        canteennum:options.canteennum
-      })
+        canteennum:options.canteennum  
+      })//加载时务必保证每个页面到shop页面的参数成功传了 到shop页面途径:食堂点击√+刷一刷点击（等待后台数据ing）
     }
-    db.collection('dish').where({
+    db.collection('dishes').where({
       'store':_.eq(options.Shop)
     })
     .get({
       success: function(res) {
         // res.data 是包含以上定义的一条记录的数组
-        console.log("搜索成功",res.data)
+        console.log("在dish中搜索到商品：",res.data)
         that.setData({
           goods:res.data//返回改菜品的_id（目前只能返回一个）
         })
       }
     })
-    db.collection('store1').where({
+
+    db.collection('store'+options.canteennum).where({
       'name':_.eq(options.Shop)
     })
     .get({
       success: function(res) {
         // res.data 是包含以上定义的一条记录的数组
-        console.log("搜索成功",res.data)
+        console.log("在",'store'+options.canteennum,'搜索到该商店：',res.data[0].name)
         that.setData({
           img_src:res.data[0]['storeImg']//返回改菜品的_id（目前只能返回一个）
         })
       }
     })
   },
+
   collect: function(){
     this.setData({
         iscollect: !this.data.iscollect
     })
     console.log(this.data.iscollect);
-},
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -106,7 +108,7 @@ gotocanteen:function(event){
    */
   onReachBottom: function () {
     wx.showToast({
-      title: '更多菜品还请实地考察',
+      title: '空间有限仅展示20道菜品，更多菜品还请移步食堂',
       icon:'none',
       duration:2000
      })
