@@ -241,7 +241,6 @@ Page({
     })
   wx.navigateTo({
     url: '/pages/shop/shop?Shop='+_msg[_index]['store']+'&canteennum='+_msg[_index]['canteennum'] 
-     //！！此处等待后端数据(数据库内dish的每条数据的canteennum字段)到位 暂用1代替
   })
   },
  
