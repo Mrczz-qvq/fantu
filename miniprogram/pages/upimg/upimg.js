@@ -80,12 +80,13 @@ Page({
       tempFilePaths = res.tempFilePaths; // 返回选定照片的本地路径列表 
       //that.upload(that, tempFilePaths);
      // console.log(tempFilePaths);
+     that.setData({
+      imgsrctest:tempFilePaths
+    })
      }
     })
     console.log(tempFilePaths)
-    this.setData({
-      imgsrctest:tempFilePaths
-    })
+   
    
    },
    

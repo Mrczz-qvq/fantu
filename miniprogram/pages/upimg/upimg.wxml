@@ -1,6 +1,6 @@
 <view style=" height: 100vh;" >
   <view class="ihead" bindtap="uploadPhoto">
-  <image src="{{imgsrctest}}" class="upimgs"  mode="aspectFit" bindtap="previewImg"></image>
+  <image src="{{imgsrctest}}" class="upimgs"  mode="aspectFit" ></image>
 </view>
 
 

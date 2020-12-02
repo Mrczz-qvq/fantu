@@ -28,7 +28,7 @@
       <image class="category-item-image" src="../../images/homepage/fan1.png" mode="aspectFit"/>
       <text class="category-item-text">玫瑰园二楼</text>
     </view>
-    <view bindtap='show' class="category-item">
+    <view bindtap='nodev' class="category-item">
       <image class="category-item-image" src="../../images/homepage/fan2.png" mode="aspectFit"/>
       <text class="category-item-text">紫荆园</text>
     </view>

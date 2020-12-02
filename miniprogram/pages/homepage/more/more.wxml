@@ -28,12 +28,11 @@
  
 <view class="weui-uploader">
   <view class="img-v weui-uploader__bd">
-    <view class='pic' >
-      <image class='weui-uploader__img '
-                src="{{imgs}}"
-               mode="aspectFill" bindtap="previewImg">
+    <image class='weui-uploader__img '
+                src="{{imgofup}}"
+                data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+                  <icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon>
         </image>
-    </view>
      
       <!-- 用来提示用户上传图片 -->
    
