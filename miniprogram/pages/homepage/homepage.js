@@ -150,7 +150,7 @@ Page({
     console.log("搜索词", event.detail.value)
     _this.data.searchKey = event.detail.value
     searchKey = event.detail.value
-    db.collection('dish').where({
+    db.collection('dishes').where({
       img_name: _.eq(searchKey)
     }).get({
       success: function(res) {
@@ -170,7 +170,7 @@ Page({
     {wx.navigateTo({
       url: '../search/search?searchKey=' + that.data.searchKey
     })
-    db.collection('dish').where({
+    db.collection('dishes').where({
       img_name: _.eq(searchKey)
     
   }).get({
