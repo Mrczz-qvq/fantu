@@ -107,6 +107,7 @@ Page({
           data: {  
               show2:true,
               store:_msg[_index]['store'],
+              canteennum:_msg[_index]['canteennum'],
               talknum:_msg[_index]['talknum'],
               cainum:_msg[_index]['cainum'],
               img_name:_msg[_index]['img_name'],

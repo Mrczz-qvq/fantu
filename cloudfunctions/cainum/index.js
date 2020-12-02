@@ -9,7 +9,7 @@ exports.main = async (event, context) => {
   {
     //数据库踩+1
     const _ = db.command
-    db.collection('dish').doc(event.dishid).update({
+    db.collection('dishes').doc(event.dishid).update({
   		data:{
         cainum: _.inc(1)
     	}
@@ -20,7 +20,7 @@ exports.main = async (event, context) => {
   {
     //数据库踩-1
     const _ = db.command
-    db.collection('dish').doc(event.dishid).update({
+    db.collection('dishes').doc(event.dishid).update({
   		data:{
         cainum: _.inc(-1)
     	}
