@@ -240,7 +240,8 @@ Page({
       duration:1000
     })
   wx.navigateTo({
-    url: '/pages/shop/shop?Shop='+_msg[_index]['store']+'&canteennum='+"1"
+    url: '/pages/shop/shop?Shop='+_msg[_index]['store']+'&canteennum='+_msg[_index]['canteennum'] 
+     //！！此处等待后端数据(数据库内dish的每条数据的canteennum字段)到位 暂用1代替
   })
   },
  
@@ -251,7 +252,7 @@ Page({
    */
   onLoad: function (options) {
    
-   db.collection('dish').aggregate().sample({
+   db.collection('dishes').aggregate().sample({
      size: 20
    }).end().then(res => {
     lists = res.list
@@ -385,7 +386,7 @@ Page({
         })
         }
 
-        db.collection('dish').aggregate().sample({
+        db.collection('dishes').aggregate().sample({
           size: 2
         }).end().then(res => {
          lists.push(res.list[0])

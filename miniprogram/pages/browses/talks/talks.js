@@ -15,24 +15,6 @@ Page({
     once_talk:null,
         talks: [
           /*{
-            avatarUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3474094557,370758738&fm=11&gp=0.jpg',
-            nickName: '小',
-            content:'为什么这么好吃呢?',
-            talkTime: '5分钟前'
-          },
-          {
-            avatarUrl: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3510986481,3852924315&fm=111&gp=0.jpg',
-            nickName: '小天',
-            content:'为什么好吃呢?',
-            talkTime: '10分钟前'
-          },
-          {
-            avatarUrl: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1419628337,1603242413&fm=26&gp=0.jpg',
-            nickName: '小琴',
-            content:'就这',
-            talkTime: '11分钟前'
-          },
-          {
             avatarUrl: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3782128483,794367969&fm=26&gp=0.jpg',
             nickName: '小4',
             content:'好',
@@ -54,7 +36,7 @@ Page({
         img_name:options.img_name,
       })
     }
-    db.collection('dish').where({
+    db.collection('dishes').where({
       'img_name':_.eq(that.data.img_name)
     })
     .get({
@@ -171,7 +153,7 @@ Page({
               talkTime: time}
           })
           console.log("本次发表的评论",this.data.once_talk)
-          db.collection('dish').doc(this.data.id).update({
+          db.collection('dishes').doc(this.data.id).update({
             data: {
               talks: _.push(this.data.once_talk)
             },

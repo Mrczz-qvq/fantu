@@ -35,7 +35,7 @@ gotocanteen:function(event){
         canteennum:options.canteennum  
       })//加载时务必保证每个页面到shop页面的参数成功传了 到shop页面途径:食堂点击√+刷一刷点击（等待后台数据ing）
     }
-    db.collection('dish').where({
+    db.collection('dishes').where({
       'store':_.eq(options.Shop)
     })
     .get({
