@@ -1,33 +1,41 @@
+<view class="numberInfo">
+ ** 信息录入</view>
+ 
+<view class="container">
+ 
 
-<view class="category-panel1">
-  <view class="category-panel2">
+  <view class="lineHeight" type="text">
+      <!-- <input class='input-7' placeholder='请选择'></input> -->
+      <view class="section">
+        <!-- <view class="section__title">省市区选择器</view> -->
+          <picker
+             mode="region"
+             bindchange="bindRegionChange"
+             value="{{region}}"
+             custom-item="{{customItem}}"
+          >
+            <view class="picker">
+              公司地址 <text class='select'>{{region[0]}}，{{region[1]}}，{{region[2]}}</text>
+            </view>
+         </picker>
+  </view>
+  </view>
+  <view class="lineHeight" type="text">具体地址
+      <input class='input-7' placeholder='具体地址'></  input>
+  </view>
+</view>
+ 
+ 
+<view class="weui-uploader">
+  <view class="img-v weui-uploader__bd">
+    <image class='weui-uploader__img '
+                src="{{imgofup}}"
+                data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+                  <icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon>
+        </image>
+     
+      <!-- 用来提示用户上传图片 -->
    
-    <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../../images/homepage/canting1.png" />
-      <text class="category-item-text">玫瑰园</text>
-    </view>
-    <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../../images/homepage/canting1.png" />
-      <text class="category-item-text">玫瑰园二楼</text>
-    </view>
-    <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../../images/homepage/canting1.png" />
-      <text class="category-item-text">紫荆园</text>
-    </view>
   </view>
-
-  <view class="category-panel2">
-    <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../../images/homepage/canting1.png" />
-      <text class="category-item-text">朝阳</text>
-    </view>
-    <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../../images/homepage/canting1.png" />
-      <text class="category-item-text">京元</text>
-    </view>
-    <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../../images/homepage/canting1.png" />
-      <text class="category-item-text">京元二楼</text>
-    </view>
-  </view>
+  <button class="upload-img-btn" bindtap="chooseImg" type='primary'>拍照  / 上传</button>
 </view>

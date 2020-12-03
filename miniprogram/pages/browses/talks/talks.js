@@ -15,24 +15,6 @@ Page({
     once_talk:null,
         talks: [
           /*{
-            avatarUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3474094557,370758738&fm=11&gp=0.jpg',
-            nickName: '小',
-            content:'为什么这么好吃呢?',
-            talkTime: '5分钟前'
-          },
-          {
-            avatarUrl: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3510986481,3852924315&fm=111&gp=0.jpg',
-            nickName: '小天',
-            content:'为什么好吃呢?',
-            talkTime: '10分钟前'
-          },
-          {
-            avatarUrl: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1419628337,1603242413&fm=26&gp=0.jpg',
-            nickName: '小琴',
-            content:'就这',
-            talkTime: '11分钟前'
-          },
-          {
             avatarUrl: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3782128483,794367969&fm=26&gp=0.jpg',
             nickName: '小4',
             content:'好',
@@ -45,6 +27,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
     var that = this
     if(options.img_name)
     {
@@ -53,7 +36,7 @@ Page({
         img_name:options.img_name,
       })
     }
-    db.collection('dish').where({
+    db.collection('dishes').where({
       'img_name':_.eq(that.data.img_name)
     })
     .get({
@@ -139,45 +122,50 @@ Page({
         //点击发布，发布评论
        
   fabu: function (e) {
-    const that = this;
-    var time = util.formatTime(new Date());
-    let temp=that.data.talks;  
-    temp.unshift({
-     avatarUrl: getApp().globalData.userInfo.avatarUrl,
-     nickName: getApp().globalData.userInfo.nickName,
-     content: this.data.inputValue,
-     talkTime: time,
-    })
-    console.log("评论",this.data.inputValue)
-   if(that.data.inputValue != ''||that.data.inputValue!=null)
-   {  
-    that.setData({
-     talks: temp,
-     inputValue: that.data.inputValue,
-    })
-    console.log("本次输入的值",this.data.inputValue)
-    this.setData({
-      once_talk:{
-      avatarUrl: getApp().globalData.userInfo.avatarUrl,
-      nickName: getApp().globalData.userInfo.nickName,
-      content: this.data.inputValue,
-      talkTime: time}
-    })
-    console.log("本次发表的评论",this.data.once_talk)
-    db.collection('dish').doc(this.data.id).update({
-      data: {
-        talks: _.push(this.data.once_talk)
-      },
-      success: function(res) {
-        console.log("传入数据成功",res)
-      }
-    })
-    this.setData({
-      inputValue:''
-    })
-   }
-   
-   
+    if(getApp().globalData.userInfo==''){
+      wx.showToast({
+        image	:'../../../images/index/outline.png',
+        title: '请先登录',
+      })
+    }else{
+        const that = this;
+        var time = util.formatTime(new Date());
+        let temp=that.data.talks;  
+        temp.unshift({
+        avatarUrl: getApp().globalData.userInfo.avatarUrl,
+        nickName: getApp().globalData.userInfo.nickName,
+        content: this.data.inputValue,
+        talkTime: time,
+        })
+        console.log("评论",this.data.inputValue)
+        if(that.data.inputValue != ''||that.data.inputValue!=null)
+        {  
+          that.setData({
+            talks: temp,
+            inputValue: that.data.inputValue,
+          })
+          console.log("本次输入的值",this.data.inputValue)
+          this.setData({
+            once_talk:{
+              avatarUrl: getApp().globalData.userInfo.avatarUrl,
+              nickName: getApp().globalData.userInfo.nickName,
+              content: this.data.inputValue,
+              talkTime: time}
+          })
+          console.log("本次发表的评论",this.data.once_talk)
+          db.collection('dishes').doc(this.data.id).update({
+            data: {
+              talks: _.push(this.data.once_talk)
+            },
+            success: function(res) {
+              console.log("传入评论数据成功",res)
+            }
+          })
+          this.setData({
+            inputValue:''
+          })
+        }
+    }
    
    },
 

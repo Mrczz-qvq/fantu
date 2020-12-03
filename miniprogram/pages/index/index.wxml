@@ -1,16 +1,21 @@
 <view wx:if="{{isHide}}">
     <view wx:if="{{canIUse}}" >
         <view class='header'>
-            <image src='../../images/index/wechat.png'></image>
+            <image src='../../images/index/icon.png'></image>
         </view>
  
         <view class='content'>
-            <view>申请获取以下权限</view>
+            <view>饭图申请获取以下权限</view>
             <text>获得你的公开信息(昵称，头像等)</text>
+            <text>用户头像和名称将用于建立个人喜好菜品的数据库(昵称，头像等)</text>
+            <text>权限可能影响到评论功能和刷一刷使用</text>
         </view>
  
         <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
             授权登录
+        </button>
+        <button class='bottom' type='primary' type="primary" lang="zh_CN" bindtap="inside">
+            暂不授权 直接进入
         </button>
     </view>
     <view wx:else>请升级微信版本</view>

@@ -1,0 +1,46 @@
+<view style=" height: 100vh;" >
+  <view class="ihead" bindtap="uploadPhoto">
+  <image src="{{imgsrctest}}" class="upimgs"  mode="aspectFit" ></image>
+</view>
+
+
+
+<view class="body1">
+  <view class="section">
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+    <text calss="text1"> 菜品位置选择：{{multiArray[0][multiIndex[0]]}} | {{multiArray[1][multiIndex[1]]}}</text>
+      
+    </view>
+  </picker>
+</view>
+</view>
+
+
+
+<view class="body2">
+    <input class="nameinput" bindinput="getfoodname" placeholder="菜品名称"></input>
+</view>
+<view>
+  菜名:{{ inputvaule}}//
+</view>
+<view class="body3">
+  <textarea class="detailinput" 
+    placeholder="输入您对菜的描述"
+    bindinput="bindTextAreaBlur"
+    maxlength="30"
+    value="{{details}}">
+    <span class="wordwrap">{{number}}/{{maxNumber}}</span>
+</textarea>
+  
+</view>
+
+<view>
+  描述:{{details}}//
+</view>
+
+<view class="btnview">
+  <button type="primary" calss="btnup">上传</button>
+</view>
+
+</view>

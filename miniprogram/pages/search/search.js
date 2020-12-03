@@ -33,7 +33,7 @@ Page({
       icon: 'loading',
       duration: 1000
     })
-    db.collection('dish').where({
+    db.collection('dishes').where({
       'img_name':
       {
         $regex:'.*' + options.searchKey + '.*',		//queryContent表示欲查询的内容，‘.*’等同于SQL中的‘%’
@@ -112,7 +112,7 @@ Page({
   },
 
   goSearch(event) { //去搜索页
-     db.collection('dish').where({
+     db.collection('dishes').where({
       'img_name':
       {
         $regex:'.*' + this.data.SearchKey + '.*',		

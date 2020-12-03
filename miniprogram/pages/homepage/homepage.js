@@ -17,6 +17,10 @@ Page({
     avatarUrl:'',
     windowHeight:'',
     windowHeight2:'',
+
+
+
+
     banner: [
       {
         picUrl:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1532844980,1238263623&fm=26&gp=0.jpg'
@@ -33,10 +37,24 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+show:function(){
+wx.navigateTo({
+  url: '../../pages/homepage/more/more',
+})
+},
+
   nodev:function()
   {
     wx.showToast({
-      title: '数据还未集全,敬请期待!',
+      title: '数据还未集全,功能未开放,敬请期待!',
+      icon:'none',
+      duration:1000
+     })
+  },
+  nodev1:function()
+  {
+    wx.showToast({
+      title: '功能未开放,敬请期待!',
       icon:'none',
       duration:1000
      })
@@ -44,7 +62,7 @@ Page({
   onLoad: function (options) {
 
     this.setData({
-      windowHeight2:wx.getSystemInfoSync().windowHeight
+      windowHeight2:wx.getSystemInfoSync().screenHeight
     })
     var high=this.data.windowHeight2
     console.log("屏幕高度2:"+high)
@@ -138,7 +156,7 @@ Page({
     console.log("搜索词", event.detail.value)
     _this.data.searchKey = event.detail.value
     searchKey = event.detail.value
-    db.collection('dish').where({
+    db.collection('dishes').where({
       img_name: _.eq(searchKey)
     }).get({
       success: function(res) {
@@ -158,7 +176,7 @@ Page({
     {wx.navigateTo({
       url: '../search/search?searchKey=' + that.data.searchKey
     })
-    db.collection('dish').where({
+    db.collection('dishes').where({
       img_name: _.eq(searchKey)
     
   }).get({
@@ -178,12 +196,29 @@ Page({
   },
 
 
-  //菜品浏览
-  btnclick2: function() {
+
+  btnclick1: function() {
     wx.navigateTo({
-      url: '../canteen/canteen'
+      url: '../canteen/canteen?canteennum='+'1'
     })
   },
+  btnclick2: function() {
+    wx.navigateTo({
+        url: '../canteen/canteen?canteennum='+'2'
+      })
+    },
+
+
+uploadphoto:function () {
+  wx.navigateTo({
+    url: '../../pages/upimg/upimg',
+  })
+  
+}
+
+
+
+
 
 
 })

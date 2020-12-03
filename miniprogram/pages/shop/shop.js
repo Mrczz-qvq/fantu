@@ -8,28 +8,19 @@ Page({
    */
   data: {
     shopname:"",
+    canteennum:"",
     shopmsg:null,
     img_src:null,
-    shopdec:"食惠快餐是一家主营快餐的店铺,这里有许多种类的荤菜和素菜,方便快捷",
-    imgUrls: [
-      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3238431746,4177294693&fm=26&gp=0.jpg',
-      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3482112846,1616623641&fm=26&gp=0.jpg',
-      'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
-  ],
-    indicatorDots: true,
-    vertical: false,
-    autoplay: true,
-    interval: 3000,
-    duration: 1200,
+    shopdec:"",
     iscollect: true,
     goods:[
-     
     ]
   },
-  gotocanteen:function(){
-wx.navigateTo({
-  url: '../../pages/canteen/canteen',
-})
+gotocanteen:function(event){
+  console.log('传参到餐厅页面的参数:',event.currentTarget.dataset.text)
+  wx.navigateTo({
+      url: '../../pages/canteen/canteen?highlight='+event.currentTarget.dataset.text+'&canteennum='+this.data.canteennum // 传递高亮的店名称和所在食堂的序号
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -38,42 +29,45 @@ wx.navigateTo({
     var that = this
     if(options.Shop)
     {
-      console.log('Shop',options.Shop)
+      console.log('获取当前超市名称：shop参数:',options.Shop,'获取当前食堂序号：canteennum参数:',options.canteennum)
       that.setData({
         shopname:options.Shop,
-      })
+        canteennum:options.canteennum  
+      })//加载时务必保证每个页面到shop页面的参数成功传了 到shop页面途径:食堂点击√+刷一刷点击（等待后台数据ing）
     }
-    db.collection('dish').where({
+    db.collection('dishes').where({
       'store':_.eq(options.Shop)
     })
     .get({
       success: function(res) {
         // res.data 是包含以上定义的一条记录的数组
-        console.log("搜索成功",res.data)
+        console.log("在dishes中搜索到商品：",res.data)
         that.setData({
           goods:res.data//返回改菜品的_id（目前只能返回一个）
         })
       }
     })
-    db.collection('store1').where({
+
+    db.collection('store'+options.canteennum).where({
       'name':_.eq(options.Shop)
     })
     .get({
       success: function(res) {
         // res.data 是包含以上定义的一条记录的数组
-        console.log("搜索成功",res.data)
+        console.log("在",'store'+options.canteennum,'搜索到该商店：',res.data[0].name)
         that.setData({
           img_src:res.data[0]['storeImg']//返回改菜品的_id（目前只能返回一个）
         })
       }
     })
   },
+
   collect: function(){
     this.setData({
         iscollect: !this.data.iscollect
     })
     console.log(this.data.iscollect);
-},
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -113,7 +107,11 @@ wx.navigateTo({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    wx.showToast({
+      title: '空间有限仅展示20道菜品，更多菜品还请移步食堂',
+      icon:'none',
+      duration:2000
+     })
   },
 
   /**

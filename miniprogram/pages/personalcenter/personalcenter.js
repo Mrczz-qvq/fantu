@@ -7,11 +7,40 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isShowUserName: true,
+    isShowUserName: false,
     avatarUrl: '',
     nickName: '',
   },
   
+  bindGetUserInfo: function(e) {
+    if (e.detail.userInfo) {
+        //用户按了允许授权按钮
+        var that = this;
+        // 获取到用户的信息了，打印到控制台上看下
+        app.globalData.userInfo = e.detail.userInfo
+        console.log("全局变量内的用户信息：",getApp().globalData.userInfo)
+        console.log("全局变量内的用户openid：",getApp().globalData.useropenid)
+        //授权成功后,通过改变 isHide 的值，让实现页面显示出来，把授权页面隐藏起来
+        that.setData({
+            isShowUserName: true
+        });
+        that.onLoad()
+    } else {
+        //用户按了拒绝按钮
+        wx.showModal({
+            title: '提示',
+            content: '您拒绝了授权，可能影响到程序使用',
+            showCancel: false,
+            confirmText: '返回',
+            success: function(res) {
+                // 用户没有授权成功，不需要改变 isHide 的值
+                if (res.confirm) {
+                    console.log('用户点击了“返回”');
+                }
+            }
+        });
+    }
+},
   onGotUserInfo: function (e) {
     var that=this
 
@@ -116,6 +145,13 @@ Page({
       avatarUrl: getApp().globalData.userInfo.avatarUrl,
       nickName: getApp().globalData.userInfo.nickName,
     })
+    console.log(this.data.nickName)
+    if(this.data.nickName.length != 0){
+      console.log("人物信息已经获取 直接显示")
+      this.setData({
+        isShowUserName:true,
+      })
+    }
   },
 
   /**

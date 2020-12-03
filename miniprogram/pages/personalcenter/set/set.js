@@ -16,24 +16,10 @@ Page({
           tagname:"辣",
           istag:false,
         },
-        {
-          value:"3",
-          tagname:"不辣",
-          istag:false,
-        },
+
         {
           value:"4",
           tagname:"甜",
-          istag:false,
-        },
-        {
-          value:"5",
-          tagname:"辣",
-          istag:false,
-        },
-        {
-          value:"6",
-          tagname:"不甜",
           istag:false,
         },
         {

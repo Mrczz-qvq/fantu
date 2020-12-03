@@ -24,6 +24,6 @@
 
 
 <view class='footer_box'> 
-<input class='talk-input' type='text' value='{{inputValue}}' bindblur="bindInputBlur" placeholder='留下你的精彩评论~'></input> 
+<input class='talk-input' type='text' value='{{inputValue}}' bindinput="bindInputBlur" placeholder='留下你的精彩评论~'></input> 
 <button class='fabu-input' bindtap='fabu'>发布</button> 
 </view>

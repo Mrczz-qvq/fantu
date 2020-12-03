@@ -12,8 +12,8 @@
     "pages/personalcenter/like/like",
     "pages/personalcenter/set/set",
     "pages/homepage/more/more",
-    "pages/browses/talks/talks"
-   
+    "pages/browses/talks/talks",
+    "pages/upimg/upimg"
   ],
   "window": {
     "backgroundColor": "#FFE2C8",
@@ -27,7 +27,6 @@
     "selectedColor": "#FF7337",
     "borderStyle": "white",
     "list": [
-  
       {
         "selectedIconPath": "images/menuicon/home3.png",
         "iconPath": "images/menuicon/home2.png",

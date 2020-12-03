@@ -9,6 +9,7 @@ Page({
   },
 
   onLoad: function (options) {
+
     var that = this;
     wx.cloud.callFunction({
         name: 'getopenid',
@@ -18,6 +19,7 @@ Page({
           
         }
       })
+
     // 查看是否授权
     wx.getSetting({
         success: function(res) {
@@ -59,7 +61,7 @@ Page({
                 });
             }
         }
-    });
+    })
 
   },
 
@@ -111,6 +113,15 @@ Page({
   onShareAppMessage: function () {
 
   },
+  inside:function(){
+    this.setData({
+      isHide: false
+  })
+  wx.switchTab({
+    url: '../homepage/homepage',
+  })
+  },
+
   bindGetUserInfo: function(e) {
     if (e.detail.userInfo) {
         //用户按了允许授权按钮
@@ -124,19 +135,19 @@ Page({
             isHide: false
         });
         wx.switchTab({
-          url: '../homepage/homepage',
+          url: '../homepage/homepage?isauthorize=',
         })
     } else {
         //用户按了拒绝按钮
         wx.showModal({
-            title: '警告',
-            content: '您点击了拒绝授权，将无法进入小程序，请授权之后再进入!!!',
+            title: '提示',
+            content: '您拒绝了授权，可能影响到程序使用',
             showCancel: false,
-            confirmText: '返回授权',
+            confirmText: '返回',
             success: function(res) {
                 // 用户没有授权成功，不需要改变 isHide 的值
                 if (res.confirm) {
-                    console.log('用户点击了“返回授权”');
+                    console.log('用户点击了“返回”');
                 }
             }
         });
