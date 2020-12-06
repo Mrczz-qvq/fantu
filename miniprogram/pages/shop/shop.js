@@ -108,7 +108,7 @@ gotocanteen:function(event){
    */
   onReachBottom: function () {
     wx.showToast({
-      title: '空间有限仅展示20道菜品，更多菜品还请移步食堂',
+      title: '更多菜品还请移步食堂',
       icon:'none',
       duration:2000
      })
