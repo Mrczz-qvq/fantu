@@ -36,8 +36,7 @@
   font-size: x-large;
   margin-top: 20rpx;
 }
-.btnup{      
-  position: fixed;    
+.btnup{       
   margin: 0px auto;  
 }
 

@@ -1,46 +1,55 @@
 <view style=" height: 100vh;" >
-  <view class="ihead" bindtap="uploadPhoto">
-  <image src="{{imgsrctest}}" class="upimgs"  mode="aspectFit" ></image>
-</view>
-
-
-
-<view class="body1">
-  <view class="section">
-  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
-    <view class="picker">
-    <text calss="text1"> 菜品位置选择：{{multiArray[0][multiIndex[0]]}} | {{multiArray[1][multiIndex[1]]}}</text>
-      
-    </view>
-  </picker>
-</view>
-</view>
-
-
-
-<view class="body2">
-    <input class="nameinput" bindinput="getfoodname" placeholder="菜品名称"></input>
-</view>
-<view>
-  菜名:{{ inputvaule}}//
-</view>
-<view class="body3">
-  <textarea class="detailinput" 
-    placeholder="输入您对菜的描述"
-    bindinput="bindTextAreaBlur"
-    maxlength="30"
-    value="{{details}}">
-    <span class="wordwrap">{{number}}/{{maxNumber}}</span>
-</textarea>
+  <form catchsubmit="formSubmit" catchreset="formReset">
   
-</view>
+  <view class="ihead" bindtap="uploadPhoto">
+     <image src="{{imgsrctest}}" class="upimgs"  mode="aspectFit" ></image>
+  </view>
 
-<view>
-  描述:{{details}}//
-</view>
+  <view class="section">
+    <view class="section__title">选择所在店铺</view>
+    <picker 
+            name="picker"
+            mode="multiSelector" 
+            bindchange="proCityChange"
+            bindcolumnchange="proCityColumnChange" 
+            value="{{proCityIndex}}" 
+            range="{{proCityArr}}">
+            <view class="picker" >
+                当前选择：
+                {{proCityArr[0][proCityIndex[0]]}}-{{proCityArr[1][proCityIndex[1]]}}
+            </view>
+    </picker>
+  </view>
 
-<view class="btnview">
-  <button type="primary" calss="btnup">上传</button>
-</view>
+  <view class="body2">
+      <input class="nameinput" bindinput="getfoodname" placeholder="菜品名称"></input>
+  </view>
+
+  <view>
+    菜名:{{ inputvaule}}//
+  </view>
+
+  <view class="body3">
+    <textarea class="detailinput" 
+      placeholder="输入您对菜的描述"
+      bindinput="bindTextAreaBlur"
+      maxlength="30"
+      value="{{details}}">
+      <span class="wordwrap">{{number}}/{{maxNumber}}</span>
+    </textarea>
+  </view>
+
+  <view>
+    描述:{{details}}//
+  </view>
+
+  <view style='margin: auto'>
+    <view class="btn-area">
+        <button style=" " class="btnup" type="primary" formType="submit">提交</button>
+        <button style=" " class="btnup" formType="reset">重置</button>
+    </view>
+  </view>
+
+  </form>
 
 </view>
