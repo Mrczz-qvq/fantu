@@ -83,9 +83,9 @@ Page({
   onShareAppMessage: function () {
 
   },
-  goshop:function(){
+  goshop:function(event){
     wx.navigateTo({
-      url: '../../shop/shop',
+      url: '../../shop/shop?Shop='+event.currentTarget.dataset.text+'&canteennum='+event.currentTarget.dataset.num
     })
   },
 
@@ -104,10 +104,6 @@ Page({
   
         }
       })
-      this.onReady()
-
-
-
-
+      this.onload()
   }
 })

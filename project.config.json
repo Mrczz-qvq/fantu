@@ -63,6 +63,12 @@
           "pathName": "pages/updish/updish",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/personalcenter/audit/audit",
+          "pathName": "pages/personalcenter/audit/audit",
+          "query": "",
+          "scene": null
         }
       ]
     }

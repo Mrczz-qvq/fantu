@@ -45,6 +45,10 @@
 		 <image src="../../images/personalcenter/upload.png" class="image"></image>
 		 <text class="text1">我的上传</text>
 	</view>
+	<view wx:if='{{isadmin==true}}' class='b2 float color text' catchtap='toaudit'>
+		 <image src="../../images/personalcenter/audit.png" class="image"></image>
+		 <text class="text1">审核菜品</text>
+	</view>
 
 	<view class="btnview">
 		<button wx:if="{{isShowUserName}}" open-type="feedback"class="backtome">
