@@ -118,6 +118,7 @@ Page({
                 canteennum:e.detail.value.picker[0],
                 talknum:0,
                 cainum:0,
+                isaudit:false,
                 img_name:that.data.inputvaule,
                 img_src: 'https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/userupload/'+getApp().globalData.useropenid+'/'+that.data.inputvaule+'.png',
                 img_tex2:that.data.details,

@@ -13,7 +13,8 @@
     "pages/personalcenter/set/set",
     "pages/homepage/more/more",
     "pages/browses/talks/talks",
-    "pages/upimg/upimg"
+    "pages/upimg/upimg",
+    "pages/personalcenter/myupload/myupload"
   ],
   "window": {
     "backgroundColor": "#FFE2C8",

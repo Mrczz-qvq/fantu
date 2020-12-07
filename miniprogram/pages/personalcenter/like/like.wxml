@@ -7,15 +7,15 @@
 
 <view  wx:for="{{goods}}" wx:key="*this" style="width:100%">
   <view class="goodslist">
-    <image src='{{item.img_src}}' class="goodslistmsg"></image>
+    <image bindtap='goshop'  data-text='{{item.store}}' data-num='{{item.canteennum}}' src='{{item.img_src}}' class="goodslistmsg"></image>
     <view class="list2">
       <text class="goodsp" >{{item.store}}</text>
       <text class="img_name1">{{item.img_name}}</text>
+      <text class="img_tex2">{{item.img_tex2}}</text>
     </view>
-   <view style="position:absolute;right:0px;width:60px;height:110px" >
-     <image bindtap='dellove'  data-index='{{item.img_name}}' src="../../../images/search/del.png" class="delimg" style="position:absolute;top:36%; right:20%;"></image>
-    
-   </view>
+    <view style="position:absolute;right:0px;width:60px;height:110px" >
+      <image bindtap='dellove'  data-index='{{item.img_name}}' src="../../../images/search/del.png" class="delimg" style="position:absolute;top:36%; right:20%;"></image>
+    </view>
   </view>
 
 </view>

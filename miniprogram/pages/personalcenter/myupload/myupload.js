@@ -15,6 +15,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that=this;
+    console.log(getApp().globalData.useropenid)
+
+    db.collection('userupload').where({
+      _openid: getApp().globalData.useropenid,
+    })
+    .get({
+      success: function(res) {
+        console.log(res.data)
+        that.setData
+        ({
+          goods:res.data
+        })
+      }
+    })  
+
 
   },
 
@@ -22,23 +38,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    var _this=this;
-    wx.cloud.callFunction({
-      name: 'getuserlist',// 云函数名称【刚刚创建的云函数文件的名字】
-      data: {
-      },
-      
-      success: function (res) {
-         {
-          console.log('获取到的用户收藏:',res.result.data)
-          _this.setData({
-            goods:res.result.data
-            })
-           console.log('调用云函数获取用户数据成功')
-         }
-       },
-       fail: console.error
-    })
+    
+    
   },
 
   /**
@@ -82,24 +83,24 @@ Page({
   onShareAppMessage: function () {
 
   },
-  goshop:function(event){
+  goshop:function(){
     wx.navigateTo({
-      url: '../../shop/shop?Shop='+event.currentTarget.dataset.text+'&canteennum='+event.currentTarget.dataset.num
+      url: '../../shop/shop',
     })
   },
 
   dellove:function(e){
-    
     const delname = e.currentTarget.dataset.index; 
-    console.log('要删除的菜：',delname)
-    db.collection(getApp().globalData.useropenid).where({
+    console.log('要删除的上传菜：',delname)
+    db.collection('userupload').where({
+      _openid:getApp().globalData.useropenid,
       img_name:delname
      }).remove({
         success: function(res) {
           wx.showToast({
             title: "删除成功"
           })
-          console.log('取消收藏 调用返回信息：',res)
+          console.log('删除了待审核菜品 调用返回信息：',res)
   
         }
       })

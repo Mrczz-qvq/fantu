@@ -137,6 +137,12 @@ Page({
       duration:1000
      })
   },
+  myupload:function()
+  {
+    wx.navigateTo({
+      url: '../../pages/personalcenter/myupload/myupload',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
