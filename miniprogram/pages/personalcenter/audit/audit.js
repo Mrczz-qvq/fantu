@@ -165,12 +165,9 @@ Page({
               },
               success: function(res) {
                   console.log('审核状态更新成功 返回信息：',res)
+                  that.onReady()    
                 }
               })
-
-
-
-
 
             that.onReady()                 
         } else if (res.cancel) {
