@@ -2,7 +2,7 @@
   font-size: x-large;
 }
 .upimg{
-  width: 40vw;
+  width: 30vw;
   
 }
 .ihead{
@@ -10,30 +10,42 @@
   align-items: center;    /**子view垂直居中*/
   vertical-align: center; /**垂直居中*/
   justify-content: center; /**内容居中*/
-  margin-top: 50rpx;
+  margin-top: 20rpx;
+}
+.body{
+  margin-left: 10rpx;
+  margin-top: 20rpx;
 }
 .body1{
   display: flex;    /*设置显示样式**/
   align-items: center;    /**子view垂直居中*/
   vertical-align: center; /**垂直居中*/
   justify-content: center; /**内容居中*/
-  font-size: x-large;
-  margin-top: 30rpx;
+  font-size: medium;
+  margin-top: 20rpx;
 }
 .body2{
   display: flex;    /*设置显示样式**/
   align-items: center;    /**子view垂直居中*/
   vertical-align: center; /**垂直居中*/
   justify-content: center; /**内容居中*/
-  font-size: x-large;
-  margin-top: 40rpx;
+  font-size: medium;
+  margin-top: 30rpx;
 }
 .body3{
   display: flex;    /*设置显示样式**/
   align-items: center;    /**子view垂直居中*/
   vertical-align: center; /**垂直居中*/
   justify-content: center; /**内容居中*/
-  font-size: x-large;
+  font-size: medium;
+  margin-top: 20rpx;
+}
+.body4{
+  display: flex;    /*设置显示样式**/
+  align-items: center;    /**子view垂直居中*/
+  vertical-align: center; /**垂直居中*/
+  justify-content: center; /**内容居中*/
+  font-size: medium;
   margin-top: 20rpx;
 }
 .btnup{       
@@ -60,4 +72,13 @@
   position: absolute;
   right: 12rpx;
   bottom: 12rpx;
+}
+.mychose{
+  font-size: x-large;
+}
+.choseofme{
+  font-size: x-large;
+}
+.sbtn{
+  background-color: cornsilk;
 }

@@ -5,8 +5,8 @@
      <image src="{{imgsrctest}}" class="upimgs"  mode="aspectFit" ></image>
   </view>
 
-  <view class="section">
-    <view class="section__title">选择所在店铺</view>
+  <view class="body">
+    <text class="choseofme">选择所在店铺</text>
     <picker 
             name="picker"
             mode="multiSelector" 
@@ -14,10 +14,10 @@
             bindcolumnchange="proCityColumnChange" 
             value="{{proCityIndex}}" 
             range="{{proCityArr}}">
-            <view class="picker" >
-                当前选择：
-                {{proCityArr[0][proCityIndex[0]]}}-{{proCityArr[1][proCityIndex[1]]}}
-            </view>
+             <text class="mychose">
+              当前选择：{{proCityArr[0][proCityIndex[0]]}}-{{proCityArr[1][proCityIndex[1]]}}
+             </text>  
+         
     </picker>
   </view>
 
@@ -25,9 +25,7 @@
       <input class="nameinput" bindinput="getfoodname" placeholder="菜品名称"></input>
   </view>
 
-  <view>
-    菜名:{{ inputvaule}}//
-  </view>
+ 
 
   <view class="body3">
     <textarea class="detailinput" 
@@ -39,14 +37,10 @@
     </textarea>
   </view>
 
-  <view>
-    描述:{{details}}//
-  </view>
 
-  <view style='margin: auto'>
+  <view class="body4">
     <view class="btn-area">
         <button style=" " class="btnup" type="primary" formType="submit">提交</button>
-        <button style=" " class="btnup" formType="reset">重置</button>
     </view>
   </view>
 
