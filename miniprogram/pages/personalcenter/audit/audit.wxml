@@ -15,14 +15,14 @@
         <text class="img_tex2">{{item.img_tex2}}</text>
       </view>
 
-      <view style="position:absolute;right:0px;width:60px;height:110px" >
+      <view style="position:absolute;right:0rpx;width:120rpx;height:220rpx" >
 
-        <view wx:if="{{item.isaudit==false}}"> 
-          <text wx:if="{{item.isaudit==false}}">未审核</text>
+        <view wx:if="{{item.isaudit==false}}" style="top:10%"> 
+          <text wx:if="{{item.isaudit==false}}" >未审核</text>
         </view>
         <image bindtap='defineadd'  data-index='{{item.img_name}}' data-store='{{item.store}}' 
-        data-img_src='{{item.img_src}}' data-tex2='{{item.img_tex2}}' data-uper='{{item._openid}}' data-dishcanteennum='{{item.canteennum}}'src="../../../images/personalcenter/yes.png" class="delimg" style="position:absolute;top:25%; right:15%;"></image> 
-        <image bindtap='definedel'  data-index='{{item.img_name}}' src="../../../images/search/del.png" class="delimg" style="position:absolute;top:50%; right:15%;"></image>
+        data-img_src='{{item.img_src}}' data-tex2='{{item.img_tex2}}' data-uper='{{item._openid}}' data-dishcanteennum='{{item.canteennum}}'src="../../../images/personalcenter/yes.png" class="delimg" style="position:absolute;top:30%; right:15%;"></image> 
+        <image bindtap='definedel'  data-index='{{item.img_name}}' src="../../../images/search/del.png" class="delimg" style="position:absolute;top:65%; right:15%;"></image>
 
       </view>
 
