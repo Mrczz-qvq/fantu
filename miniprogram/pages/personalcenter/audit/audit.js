@@ -95,16 +95,16 @@ Page({
       success (res) {
         if (res.confirm) {
           console.log('用户点击确定')
-
           const delname = e.currentTarget.dataset.index; 
+          const dishid = e.currentTarget.dataset.dishid; 
           console.log('要删除的上传菜：',delname)
             db.collection('userupload').where({
-              img_name:delname
+              img_name:delname,
+              _id:dishid
             }).remove({
               success: function(res) {
                 wx.showToast({
                   title: "删除成功"
-                  
                 })
                 that.onReady() 
                 console.log('删除了待审核菜品 调用返回信息：',res)
@@ -135,6 +135,7 @@ Page({
           const addimg = e.currentTarget.dataset.img_src; 
           const dishcanteen = e.currentTarget.dataset.dishcanteennum; 
           const uper = e.currentTarget.dataset.uper; 
+          const dishid = e.currentTarget.dataset.dishid; 
           console.log('用户要上传的菜：',addname1,addname2,dishstore,addimg,imgtext,dishcanteen,uper)
             db.collection('dishes').add({
               data: {  
@@ -160,7 +161,8 @@ Page({
             })
             db.collection('userupload').where({
               _openid:uper,//此处为上传用户的openid
-              img_name:addname1
+              img_name:addname1,
+              _id:dishid
              }).update({
               data: {
                 isaudit: true

@@ -20,16 +20,19 @@ Page({
 
 
 
-
+    lists:'',
     banner: [
       {
-        picUrl:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1532844980,1238263623&fm=26&gp=0.jpg'
+        picUrl:'',
+        storename:''
       },
       {
-        picUrl:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1902356188,3396580504&fm=26&gp=0.jpg'
+        picUrl:'',
+        storename:''
       },
       {
-        picUrl:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1556646393,2359856313&fm=26&gp=0.jpg'
+        picUrl:'',
+        storename:''
       }
     ],
   },
@@ -92,14 +95,45 @@ wx.navigateTo({
       }
     })
 
-
-
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    var that=this
+    db.collection('dishes')
+    .aggregate()
+    .sample({
+      size: 3
+    }).end().then(res=>{  
+      console.log(res.list[0].img_src,res.list[0].store);
+      console.log(res.list[1].img_src,res.list[1].store);
+      console.log(res.list[2].img_src,res.list[2].store);
+      that.setData({
+        banner: [
+          {
+            picUrl:res.list[0].img_src,
+            storename:res.list[0].store,
+            dishname:res.list[0].img_name,
+            storecanteen:res.list[0].canteennum
+          },
+          {
+            picUrl:res.list[1].img_src,
+            storename:res.list[1].store,
+            dishname:res.list[1].img_name,
+            storecanteen:res.list[1].canteennum
+          },
+          {
+            picUrl:res.list[2].img_src,
+            storename:res.list[2].store,
+            dishname:res.list[2].img_name,
+            storecanteen:res.list[2].canteennum
+          }
+        ]
+        })
+      })
+
     wx.getSystemInfo({
       success(res) {
        windowHeight:res.windowHeight
@@ -199,8 +233,8 @@ wx.navigateTo({
 
   btnclick1: function() {
     wx.navigateTo({
-      url: '../canteen/canteen?canteennum='+'1'
-    })
+       url: '../canteen/canteen?canteennum='+'1'
+     })
   },
   btnclick2: function() {
     wx.navigateTo({
@@ -208,35 +242,49 @@ wx.navigateTo({
       })
     },
   btnclick3: function() {
-      wx.navigateTo({
-          url: '../canteen/canteen?canteennum='+'3'
-        })
-      },
+    wx.navigateTo({
+        url: '../canteen/canteen?canteennum='+'3'
+      })
+    },
   btnclick4: function() {
-        wx.navigateTo({
-            url: '../canteen/canteen?canteennum='+'4'
-          })
-        },
+    wx.navigateTo({
+        url: '../canteen/canteen?canteennum='+'4'
+      })
+    },
   btnclick5: function() {
-          wx.navigateTo({
-              url: '../canteen/canteen?canteennum='+'5'
-            })
-          },
+     wx.navigateTo({
+        url: '../canteen/canteen?canteennum='+'5'
+      })
+    },
   btnclick6: function() {
-            wx.navigateTo({
-                url: '../canteen/canteen?canteennum='+'6'
-              })
-            },
+    wx.navigateTo({
+        url: '../canteen/canteen?canteennum='+'6'
+      })
+    },
   btnclick7: function() {
-              wx.navigateTo({
-                  url: '../canteen/canteen?canteennum='+'7'
-                })
-              },
+    wx.navigateTo({
+        url: '../canteen/canteen?canteennum='+'7'
+      })
+    },
   btnclick8: function() {
-                wx.navigateTo({
-                    url: '../canteen/canteen?canteennum='+'8'
-                  })
-                },
+    wx.navigateTo({
+        url: '../canteen/canteen?canteennum='+'8'
+      })
+    },
+
+homepagegoshop:function(event){
+  wx.showToast({
+    title: event.currentTarget.dataset.dishname,
+    icon: 'none',
+    duration: 1500,
+  })
+  setTimeout(function (){
+    wx.navigateTo({
+      url: '../shop/shop?Shop='+event.currentTarget.dataset.tapstore+'&canteennum='+event.currentTarget.dataset.tapcanteen
+    })
+  },1000)  
+
+},
 
 
 uploadphoto:function () {

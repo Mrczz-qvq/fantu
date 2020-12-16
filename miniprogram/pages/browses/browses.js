@@ -38,7 +38,7 @@ Page({
       let _msg = [...vm.data.video_list]; // msg的引用 
       console.log(_msg[_index]['img_name']) ;
     wx.navigateTo({
-      url: '../../pages/browses/talks/talks?img_name='+_msg[_index]['img_name'],
+      url: '../../pages/browses/talks/talks?img_name='+_msg[_index]['img_name']+'&dishid='+_msg[_index]['_id']
     })
     
     },
@@ -252,7 +252,7 @@ Page({
    */
   onLoad: function (options) {
    
-   db.collection('dishes').aggregate().sample({
+  db.collection('dishes').aggregate().sample({
      size: 20
    }).end().then(res => {
     lists = res.list

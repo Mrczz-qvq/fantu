@@ -4,7 +4,7 @@
   <swiper indicator-dots="{{true}}" indicator-color="#f4c903" autoplay="true" circular="true">
     <block wx:for="{{banner}}" wx:key="banner">
       <swiper-item>
-        <image src='{{item.picUrl}}' mode="aspectFill" style="width:100%;height:100%;" />
+        <image src='{{item.picUrl}}' mode="aspectFill" bindtap='homepagegoshop' data-tapstore='{{item.storename}}'  data-tapcanteen='{{item.storecanteen}}' data-dishname='{{item.dishname}}' style="width:100%;height:100%;" />
       </swiper-item>
     </block>
   </swiper>
