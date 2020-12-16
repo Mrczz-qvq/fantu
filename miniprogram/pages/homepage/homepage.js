@@ -115,16 +115,19 @@ wx.navigateTo({
           {
             picUrl:res.list[0].img_src,
             storename:res.list[0].store,
+            dishname:res.list[0].img_name,
             storecanteen:res.list[0].canteennum
           },
           {
             picUrl:res.list[1].img_src,
             storename:res.list[1].store,
+            dishname:res.list[1].img_name,
             storecanteen:res.list[1].canteennum
           },
           {
             picUrl:res.list[2].img_src,
             storename:res.list[2].store,
+            dishname:res.list[2].img_name,
             storecanteen:res.list[2].canteennum
           }
         ]
@@ -270,9 +273,17 @@ wx.navigateTo({
     },
 
 homepagegoshop:function(event){
-  wx.navigateTo({
-    url: '../shop/shop?Shop='+event.currentTarget.dataset.tapstore+'&canteennum='+event.currentTarget.dataset.tapcanteen
+  wx.showToast({
+    title: event.currentTarget.dataset.dishname,
+    icon: 'none',
+    duration: 1500,
   })
+  setTimeout(function (){
+    wx.navigateTo({
+      url: '../shop/shop?Shop='+event.currentTarget.dataset.tapstore+'&canteennum='+event.currentTarget.dataset.tapcanteen
+    })
+  },1000)  
+
 },
 
 
