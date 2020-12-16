@@ -5,6 +5,24 @@
 <view wx:if="{{canteennum==2}}"class="map">
   <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map2.png" ></image>
 </view>
+<view wx:if="{{canteennum==3}}"class="map">
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map3.png" ></image>
+</view>
+<view wx:if="{{canteennum==4}}"class="map">
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map4.png" ></image>
+</view>
+<view wx:if="{{canteennum==5}}"class="map">
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map5.png" ></image>
+</view>
+<view wx:if="{{canteennum==6}}"class="map">
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map6.png" ></image>
+</view>
+<view wx:if="{{canteennum==7}}"class="map">
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map7.png" ></image>
+</view>
+<view wx:if="{{canteennum==8}}"class="map">
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map8.png" ></image>
+</view>
 
 
 <view class="store">
