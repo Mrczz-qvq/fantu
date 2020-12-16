@@ -28,14 +28,14 @@
       <image class="category-item-image" src="../../images/homepage/fan1.png" mode="aspectFit"/>
       <text class="category-item-text">玫瑰园二楼</text>
     </view>
-    <view bindtap='nodev' class="category-item">
+    <view bindtap='btnclick3' class="category-item">
       <image class="category-item-image" src="../../images/homepage/fan2.png" mode="aspectFit"/>
       <text class="category-item-text">紫荆园</text>
     </view>
   </view>
 
   <view class="category-panel2">
-    <view bindtap='nodev' class="category-item">
+    <view bindtap='btnclick4' class="category-item">
       <image class="category-item-image" src="../../images/homepage/fan4.png" mode="aspectFit"/>
       <text class="category-item-text">紫荆园二楼</text>
     </view>
@@ -43,7 +43,7 @@
       <image class="category-item-image" src="../../images/homepage/photo.png" mode="aspectFit"/>
       <text class="category-item-text">拍照上传</text>
     </view>
-    <view bindtap='nodev' class="category-item">
+    <view bindtap='btnclick5' class="category-item">
       <image class="category-item-image" src="../../images/homepage/fan5.png" mode="aspectFit"/>
       <text class="category-item-text">京元</text>
     </view>
@@ -52,15 +52,15 @@
 
   <view class="category-panel2">
    
-   <view bindtap='nodev' class="category-item">
+   <view bindtap='btnclick6' class="category-item">
      <image class="category-item-image" src="../../images/homepage/fan3.png"  mode="aspectFit" />
      <text class="category-item-text">朝阳</text>
    </view>
-   <view bindtap='nodev' class="category-item">
+   <view bindtap='btnclick7' class="category-item">
      <image class="category-item-image" src="../../images/homepage/fan6.png" mode="aspectFit"/>
      <text class="category-item-text">丁香园</text>
    </view>
-   <view bindtap='nodev' class="category-item">
+   <view bindtap='btnclick8' class="category-item">
      <image class="category-item-image" src="../../images/homepage/fan7.png" mode="aspectFit"/>
      <text class="category-item-text">丁香二楼</text>
    </view>

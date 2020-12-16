@@ -15,11 +15,13 @@
   height: 70rpx; 
   padding-top: 30rpx; 
   text-align: center; 
+  background-color: #FFE2C8;
   }
    
    
   .talk-body { 
   height: 950rpx; 
+  background-color:#FFE2C8;
   }
   .footer_box { 
     display: flex;
@@ -31,10 +33,12 @@
     height:150rpx;
     z-index:665;
     bottom:0rpx;
-background-color: whitesmoke;
+background-color:#FFE2C8;
     }
      
-   
+   page{
+    background-color:#FFE2C8;
+   }
   .talk-footer { 
   position: absolute; 
   bottom: 0rpx; 
@@ -170,7 +174,7 @@ background-color: whitesmoke;
   padding-left: 30rpx; 
   /* box-sizing: border-box; */ 
   color: black; 
-  border: 1px solid #aaccff;
+  border: 1px solid #FF7337;
   border-top-left-radius: 5%;
   border-top-right-radius: 5%;
    
@@ -178,8 +182,7 @@ background-color: whitesmoke;
    
   
   .fabu-input { 
-  background: #aaccff;   
-  padding-right: 10px;
+  background:#FF7337;   
   }
   
   

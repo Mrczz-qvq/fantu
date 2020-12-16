@@ -1,0 +1,33 @@
+<view class="head"> 
+  <text class="headtop">待审核上传内容</text>
+</view>
+<view class="head1"> 
+</view>
+<scroll-view  scroll-y="true" bindscrolltolower="onScrollLoad"  style="width:100%"> 
+  <view  wx:for="{{goods}}" wx:key="*this" style="width:100%">
+    <view class="goodslist">
+      
+      <image bindtap='goshop'  data-text='{{item.store}}' data-num='{{item.canteennum}}' src='{{item.img_src}}' class="goodslistmsg"></image>
+
+      <view class="list2">
+        <text class="goodsp" >{{item.store}}</text>
+        <text class="img_name1">{{item.img_name}}</text>
+        <text class="img_tex2">{{item.img_tex2}}</text>
+      </view>
+
+      <view style="position:absolute;right:0rpx;width:120rpx;height:220rpx" >
+
+        <view wx:if="{{item.isaudit==false}}" style="top:10%"> 
+          <text wx:if="{{item.isaudit==false}}" >未审核</text>
+        </view>
+        
+        <image bindtap='defineadd'  data-index='{{item.img_name}}' data-store='{{item.store}}' 
+        data-img_src='{{item.img_src}}' data-tex2='{{item.img_tex2}}' data-uper='{{item._openid}}' data-dishcanteennum='{{item.canteennum}}'src="../../../images/personalcenter/yes.png" class="delimg" style="position:absolute;top:30%; right:15%;"></image> 
+        <image bindtap='definedel'  data-index='{{item.img_name}}' src="../../../images/search/del.png" class="delimg" style="position:absolute;top:65%; right:15%;"></image>
+
+      </view>
+
+    </view>
+
+  </view>
+</scroll-view>

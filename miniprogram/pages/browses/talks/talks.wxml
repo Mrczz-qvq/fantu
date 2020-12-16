@@ -4,6 +4,7 @@
 <view  wx:if="{{talks.length==0}}" class='talk-header'> 
   <view class='talk-count'>还没有人评论，快来抢沙发吧！</view> 
 </view>
+
 <scroll-view  wx:if="{{talks.length>0}}" class='talk-body' scroll-y="true"  bindscrolltolower="onScrollLoad"> 
 <view class='talk-item' wx:for="{{talks}}" wx:key="*this"> 
 <view class='talk-item-left'>

@@ -1,9 +1,27 @@
 <!--pages/Restaurant1/Restaurant1.wxml-->
 <view wx:if="{{canteennum==1}}"class="map">
-  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map1.png?sign=ee101e38e614a3208ef3759fbf7a3f77&t=1606446647" ></image>
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map1.png" ></image>
 </view>
 <view wx:if="{{canteennum==2}}"class="map">
-  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map2.jpg?sign=1da3f8f12ebd3ff603f736908e9def41&t=1606810605" ></image>
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map2.png" ></image>
+</view>
+<view wx:if="{{canteennum==3}}"class="map">
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map3.png" ></image>
+</view>
+<view wx:if="{{canteennum==4}}"class="map">
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map4.png" ></image>
+</view>
+<view wx:if="{{canteennum==5}}"class="map">
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map5.png" ></image>
+</view>
+<view wx:if="{{canteennum==6}}"class="map">
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map6.png" ></image>
+</view>
+<view wx:if="{{canteennum==7}}"class="map">
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map7.png" ></image>
+</view>
+<view wx:if="{{canteennum==8}}"class="map">
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map8.png" ></image>
 </view>
 
 

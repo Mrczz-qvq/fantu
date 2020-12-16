@@ -207,6 +207,36 @@ wx.navigateTo({
         url: '../canteen/canteen?canteennum='+'2'
       })
     },
+  btnclick3: function() {
+      wx.navigateTo({
+          url: '../canteen/canteen?canteennum='+'3'
+        })
+      },
+  btnclick4: function() {
+        wx.navigateTo({
+            url: '../canteen/canteen?canteennum='+'4'
+          })
+        },
+  btnclick5: function() {
+          wx.navigateTo({
+              url: '../canteen/canteen?canteennum='+'5'
+            })
+          },
+  btnclick6: function() {
+            wx.navigateTo({
+                url: '../canteen/canteen?canteennum='+'6'
+              })
+            },
+  btnclick7: function() {
+              wx.navigateTo({
+                  url: '../canteen/canteen?canteennum='+'7'
+                })
+              },
+  btnclick8: function() {
+                wx.navigateTo({
+                    url: '../canteen/canteen?canteennum='+'8'
+                  })
+                },
 
 
 uploadphoto:function () {

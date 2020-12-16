@@ -17,17 +17,8 @@
 		<image src="../../images/personalcenter/like.png" class="image"></image>
 		<text class="text1">我的喜好</text>
 	</view>
-	<view class='b2 float color text' catchtap='tip'>
-		<image src="../../images/personalcenter/footprint.png" class="image"></image>
-		<text class="text1">足迹</text>
-	</view>
-	<view>
-		
-	</view>
 	<view class="btnview">
-		<button wx:if="{{!isShowUserName}}"catchtap='tip' class="backtome" >
-				吐槽一下
-			</button>
+		<button wx:if="{{!isShowUserName}}"catchtap='tip' class="backtome" >吐槽一下</button>
 	</view>
 </view>
 
@@ -42,16 +33,19 @@
 		 <image src="../../images/personalcenter/like.png" class="image"></image>
 		 <text class="text1">我的喜好</text>
 	</view>
-	<view class='b2 float color text' catchtap='tipp'>
-		 <image src="../../images/personalcenter/footprint.png" class="image"></image>
-		 <text class="text1">足迹</text>
+	<view class='b2 float color text' catchtap='myupload'>
+		 <image src="../../images/personalcenter/upload.png" class="image"></image>
+		 <text class="text1">我的上传</text>
 	</view>
-
+	<view wx:if='{{isadmin==true}}' class='b2 float color text' catchtap='toaudit'>
+		 <image src="../../images/personalcenter/audit.png" class="image"></image>
+		 <text class="text1">审核菜品</text>
+	</view>
 
 	<view class="btnview">
 		<button wx:if="{{isShowUserName}}" open-type="feedback"class="backtome">
 			吐槽一下
 		</button>
-</view>
-		
 	</view>
+		
+</view>

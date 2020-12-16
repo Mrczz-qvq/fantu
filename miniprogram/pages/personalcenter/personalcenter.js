@@ -10,6 +10,9 @@ Page({
     isShowUserName: false,
     avatarUrl: '',
     nickName: '',
+    useropenid:'',
+    isadmin:false,
+    adminlist:['oxiQE5U1hMAAOsaQkaFeyLtH1XCY','oxiQE5R58BLz1YXmngfY0uHSPaEE','oxiQE5U-FPIZvDjwGKTyQmUj2wFA','oxiQE5ZT7kGs6YR1V9fr2Kjcv868','oxiQE5VnVLm2IyVQOU2nWcDiniW0','oxiQE5eGyS-hYkgOUKfLmabZpCvg']
   },
   
   bindGetUserInfo: function(e) {
@@ -40,7 +43,7 @@ Page({
             }
         });
     }
-},
+  },
   onGotUserInfo: function (e) {
     var that=this
 
@@ -58,34 +61,15 @@ Page({
         },
         success: function (res) {
           {
-            //由于只能云端更新用户表 故放弃 由于一开始就获取了权限 不影响使用
-            /*  db.collection('usertable').where
-              ({
-                useropenid:res.result.openid
-              }).update({
-                // data 传入需要局部更新的数据
-                data: {
-                  useropenid:user.openid,
-                  username:user.nickName,
-                  userimg:user.avatarUrl
-                },
-                success: function(res) {
-                  console.log(res,"重新set数据库用户信息完成")
-                }
-              }) */
           console.log('openid：', res.result.openid)
-          console.log('登陆 获取openid调用成功')
-           
+          console.log('登陆 获取openid调用成功')    
           }},
         fail: console.error
       })
-
-      
-     
-      
     } else {
       app._showSettingToast('登陆需要允许授权');
     }
+    
   },
 
   onShow(options) {
@@ -123,12 +107,6 @@ Page({
       url: '../../pages/personalcenter/like/like',
     })
   },
-  toback:function()
-  {
-    wx.navigateTo({
-      url: '../../pages/personalcenter/back/back',
-    })
-  },
   tipp:function()
   {
     wx.showToast({
@@ -137,6 +115,18 @@ Page({
       duration:1000
      })
   },
+  myupload:function()
+  {
+    wx.navigateTo({
+      url: '../../pages/personalcenter/myupload/myupload',
+    })
+  },
+  toaudit:function()
+  {
+    wx.navigateTo({
+      url: '../../pages/personalcenter/audit/audit',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -144,13 +134,29 @@ Page({
     this.setData({
       avatarUrl: getApp().globalData.userInfo.avatarUrl,
       nickName: getApp().globalData.userInfo.nickName,
+      useropenid:getApp().globalData.useropenid
     })
-    console.log(this.data.nickName)
+    console.log('用户微信名称：',this.data.nickName)
     if(this.data.nickName.length != 0){
       console.log("人物信息已经获取 直接显示")
       this.setData({
         isShowUserName:true,
       })
+    }
+    for(var i= 0;i<6;i++)
+    {
+      if(this.data.useropenid==this.data.adminlist[i])
+      {
+        this.setData({
+          isadmin:true,
+        })
+        wx.showToast({
+          title: '管理员认证完成',
+          icon: 'success',
+          duration: 2000
+          })
+        break;
+      }
     }
   },
 
