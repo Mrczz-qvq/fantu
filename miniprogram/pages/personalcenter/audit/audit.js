@@ -104,7 +104,9 @@ Page({
               success: function(res) {
                 wx.showToast({
                   title: "删除成功"
+                  
                 })
+                that.onReady() 
                 console.log('删除了待审核菜品 调用返回信息：',res)
               }
             })

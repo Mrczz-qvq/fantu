@@ -73,6 +73,7 @@ Page({
         {parentId: 4, id: 6 , name:'沙茶面' },
         {parentId: 4, id: 7 , name:'漳州风味' },
         {parentId: 4, id: 8 , name:'闽北特色' },
+        {parentId: 4, id: 9 , name:'新加坡捞烫' },
                 
         {parentId: 5, id: 1 , name:'喔喔手工水饺' },
         {parentId: 5, id: 2 , name:'麻辣香锅' },
@@ -95,8 +96,8 @@ Page({
         {parentId: 6, id: 5 , name:'广式煲仔砂锅' },
         {parentId: 6, id: 6 , name:'麻辣香锅' },
         {parentId: 6, id: 7 , name:'蜀合记' },
-        {parentId: 6, id: 8 , name:'烤鱼饭' },
-        {parentId: 6, id: 9 , name:'麻辣烫' },
+        {parentId: 6, id: 8 , name:'无骨烤鱼饭' },
+        {parentId: 6, id: 9 , name:'杨守荣麻辣烫' },
         {parentId: 6, id: 10 , name:'旋转小火锅' },
         {parentId: 6, id: 11 , name:'壹碗米饭' },
         {parentId: 6, id: 12 , name:'自选快餐' },
@@ -128,6 +129,7 @@ Page({
         {parentId: 8, id: 11 , name:'脆皮鸡米饭' },
         {parentId: 8, id: 12 , name:'闽香卤味' },  
         {parentId: 8, id: 13 , name:'谷田稻乡' },
+        
         
       ],
       proCityIndex: [0, 0], //2列选择器当前显示数据的索引
