@@ -40,6 +40,7 @@ Page({
         {parentId: 1, id: 20 , name:'嘿米牛肉饭' },
         {parentId: 1, id: 21 , name:'猪脚饭' },
         {parentId: 1, id: 22 , name:'豪客士' },
+        
         {parentId: 2, id: 1 , name:'99自助餐' },
         {parentId: 2, id: 2 , name:'壹米阳光' },
         {parentId: 2, id: 3 , name:'六号简餐' },
@@ -60,10 +61,10 @@ Page({
         {parentId: 2, id: 18 , name:'小明烧菜' },
         {parentId: 2, id: 19 , name:'麦德豪' },
         {parentId: 2, id: 20 , name:'水果捞' },
-        
+                
         {parentId: 3, id: 1 , name:'自选快餐' },
         {parentId: 3, id: 2 , name:'风味早点' },
-
+        
         {parentId: 4, id: 1 , name:'特色煲仔' },
         {parentId: 4, id: 2 , name:'食汇水煮' },
         {parentId: 4, id: 3 , name:'手工水饺' },
@@ -72,9 +73,21 @@ Page({
         {parentId: 4, id: 6 , name:'沙茶面' },
         {parentId: 4, id: 7 , name:'漳州风味' },
         {parentId: 4, id: 8 , name:'闽北特色' },
-        
-        {parentId: 5, id: 1 , name:'数据尚未导入' },
-        
+                
+        {parentId: 5, id: 1 , name:'喔喔手工水饺' },
+        {parentId: 5, id: 2 , name:'麻辣香锅' },
+        {parentId: 5, id: 3 , name:'淳百味' },
+        {parentId: 5, id: 4 , name:'瓦香鸡米饭' },
+        {parentId: 5, id: 5 , name:'猫叫了只鱼' },
+        {parentId: 5, id: 6 , name:'港式烧腊' },
+        {parentId: 5, id: 7 , name:'饭小榜牛肉饭' },
+        {parentId: 5, id: 8 , name:'品鲜高汤' },
+        {parentId: 5, id: 9 , name:'老鸭粉面' },
+        {parentId: 5, id: 10 , name:'李大碗拉面' },
+        {parentId: 5, id: 11 , name:'廖记瓦罐' },
+        {parentId: 5, id: 12 , name:'章叔有空' },
+        {parentId: 5, id: 13 , name:'正粤营养糖水粥' },
+                
         {parentId: 6, id: 1 , name:'阿肥发扁食' },
         {parentId: 6, id: 2 , name:'阿妈香肉拌饭' },
         {parentId: 6, id: 3 , name:'阿兴瓦罐' },
@@ -87,6 +100,7 @@ Page({
         {parentId: 6, id: 10 , name:'旋转小火锅' },
         {parentId: 6, id: 11 , name:'壹碗米饭' },
         {parentId: 6, id: 12 , name:'自选快餐' },
+        
         {parentId: 7, id: 1 , name:'营养快餐' },
         {parentId: 7, id: 2 , name:'功夫粥' },
         {parentId: 7, id: 3 , name:'腊么香' },
@@ -100,6 +114,7 @@ Page({
         {parentId: 7, id: 11 , name:'麻辣烫' },
         {parentId: 7, id: 12 , name:'兰州拉面' },
         {parentId: 7, id: 13 , name:'胖子' },
+                
         {parentId: 8, id: 1 , name:'迪卡健身餐厅' },
         {parentId: 8, id: 2 , name:'肉骨茶' },
         {parentId: 8, id: 3 , name:'范青春焖饭' },
@@ -112,6 +127,7 @@ Page({
         {parentId: 8, id: 10 , name:'老上海' },
         {parentId: 8, id: 11 , name:'脆皮鸡米饭' },
         {parentId: 8, id: 12 , name:'闽香卤味' },  
+        
       ],
       proCityIndex: [0, 0], //2列选择器当前显示数据的索引
   
