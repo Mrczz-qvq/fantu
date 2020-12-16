@@ -25,25 +25,25 @@
 
 
 <scroll-view  scroll-y="true" bindscrolltolower="onScrollLoad"> 
-<view wx:if="{{goods.length>0}}"> 
-<view  wx:for="{{goods}}" wx:key="*this">
 
-  <view class="goodslist">
-    <image src='{{item.img_src}}' style='width:150px;height:112px;'class="goodslistmsg"></image>
-    <view class="list2"  style='width:150px;height:112px'>
-     <text class="goodsname" style='font-size:40rpx;'>{{item.img_name}}</text>
-     <text class="goodsp" style='font-size:30rpx;'>{{item.img_tex2}}</text>
-   </view>
-  
-</view>
+  <view wx:if="{{goods.length>0}}"> 
+    <view  wx:for="{{goods}}" wx:key="*this">
+      <view class="goodslist" bindtap="gototalk" data-dishname="{{item.img_tex1}}" data-dishid="{{item._id}}">
+          <image src='{{item.img_src}}' style='width:150px;height:112px;'class="goodslistmsg"></image>
+          <view class="list2"  style='width:150px;height:112px'>
+            <text class="goodsname" style='font-size:40rpx;'>{{item.img_name}}</text>
+            <text class="goodsp" style='font-size:30rpx;'>{{item.img_tex2}}</text>
+          </view>
+        
+      </view>
+    </view>
+  </view>
 
-</view>
+  <view wx:else>
+    <text>
+      商品详情尚未获取
+    </text>
+  </view>
 
-</view>
-<view wx:else>
-<text>
-  商品详情尚未获取
-</text>
-</view>
-  </scroll-view>
+</scroll-view>
 

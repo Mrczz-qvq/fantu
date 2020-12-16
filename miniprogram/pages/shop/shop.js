@@ -120,7 +120,11 @@ gotocanteen:function(event){
       duration:2000
      })
   },
-
+  gototalk: function (event) {
+    wx.navigateTo({
+      url: '../../pages/browses/talks/talks?img_name='+event.currentTarget.dataset.dishname+"&dishid="+event.currentTarget.dataset.dishid
+    })
+  },
   /**
    * 用户点击右上角分享
    */

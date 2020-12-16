@@ -172,7 +172,7 @@ Page({
 
       var that=this
       wx.cloud.uploadFile({
-        cloudPath: 'images/userupload/'+getApp().globalData.useropenid+'/'+this.data.inputvaule+'.png',
+        cloudPath: 'images/userupload/'+getApp().globalData.useropenid+'/'+that.data.proCityArr[1][that.data.proCityIndex[1]]+((e.detail.value.picker[0]+1))+that.data.inputvaule+'.png',
         filePath: this.data.imgsrctest[0], // 文件路径
         success: res => {
           console.log('图片上传到云存储成功，上传图片路径：',res.fileID)
@@ -185,7 +185,7 @@ Page({
                 cainum:0,
                 isaudit:false,
                 img_name:that.data.inputvaule,
-                img_src: 'https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/userupload/'+getApp().globalData.useropenid+'/'+that.data.inputvaule+'.png',
+                img_src: 'https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/userupload/'+getApp().globalData.useropenid+'/'+that.data.proCityArr[1][that.data.proCityIndex[1]]+((e.detail.value.picker[0]+1))+that.data.inputvaule+'.png',
                 img_tex2:that.data.details,
                 talks:[],
                 zannum:0,

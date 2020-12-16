@@ -31,13 +31,15 @@ Page({
     var that = this
     if(options.img_name)
     {
-      console.log('result',options.img_name)
+      console.log('菜名：',options.img_name)
       that.setData({
         img_name:options.img_name,
       })
     }
+    console.log('传过来的菜品id',options.dishid)
     db.collection('dishes').where({
-      'img_name':_.eq(that.data.img_name)
+      'img_name':_.eq(that.data.img_name),
+      '_id':options.dishid
     })
     .get({
       success: function(res) {
