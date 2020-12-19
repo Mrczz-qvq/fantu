@@ -32,6 +32,52 @@ Page({
 
     console.log('当前食堂：canteen'+this.data.canteennum)
     console.log('当前数据库：',this.data.storenow)
+    switch (this.data.canteennum) {
+      case '1':
+        wx.setNavigationBarTitle({
+          title: '玫瑰园'
+        })
+        break;
+      case '2':
+        wx.setNavigationBarTitle({
+          title: '玫瑰二楼'
+        })
+        break;
+      case '3':
+        wx.setNavigationBarTitle({
+          title: '紫荆园'
+        })
+        break;
+      case '4':
+        wx.setNavigationBarTitle({
+          title: '紫荆二楼'
+        })
+        break; 
+      case '5':
+        wx.setNavigationBarTitle({
+          title: '京元(海棠园)'
+        })
+        break;     
+      case '6':
+        wx.setNavigationBarTitle({
+          title: '朝阳园'
+        })
+        break; 
+      case '7':
+        wx.setNavigationBarTitle({
+          title: '丁香园'
+        })
+        break;     
+      case '8':
+        wx.setNavigationBarTitle({
+          title: '丁香二楼'
+        })
+        break;     
+
+    }
+
+    
+
 
     db.collection(this.data.storenow).get().then(res => {
       this.setData({

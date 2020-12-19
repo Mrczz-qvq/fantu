@@ -8,8 +8,8 @@
   justify-content: center;
 }
 .mapitem{
-  width: 750rpx;
-  height:1200rpx;
+  width: 748rpx;
+  height:1180rpx;
   border: solid 1px black;
   
 }
