@@ -112,7 +112,7 @@ Page({
         {parentId: 7, id: 8 , name:'锅先生渔粉' },
         {parentId: 7, id: 9 , name:'沙茶面' },
         {parentId: 7, id: 10 , name:'水果捞' },
-        {parentId: 7, id: 11 , name:'鑫福龙麻辣烫' },
+        {parentId: 7, id: 11 , name:'鑫龙福麻辣烫' },
         {parentId: 7, id: 12 , name:'兰州拉面' },
         {parentId: 7, id: 13 , name:'胖子' },
                 
