@@ -11,7 +11,7 @@ Page({
       inputvaule:"",
       imgData: [],
       details:"",
-      maxNumber:30,//可输入最大字数
+      maxNumber:15,//可输入最大字数
       number: 0,//已输入字数
       chosen: '',
       imgs: [],

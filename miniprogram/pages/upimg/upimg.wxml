@@ -31,7 +31,7 @@
     <textarea class="detailinput" 
       placeholder="输入您对菜的描述"
       bindinput="bindTextAreaBlur"
-      maxlength="30"
+      maxlength="15"
       value="{{details}}">
       <span class="wordwrap">{{number}}/{{maxNumber}}</span>
     </textarea>

@@ -32,28 +32,30 @@
   padding-right: 6px;
   padding-bottom: 6px;
   padding-left: 8px;
-  padding-right: 10px;
 }
 
-.goodsname{
-  display:flex;
-align-items:center;
-justify-content:center;
-padding-top: 15px;
-}
 .goodsp{
   display:flex;
-align-items:center;
-justify-content:center;
-padding-top: 30%;
-color: #EE9A00;
+align-items:left;
+justify-content:left;
+padding-top: 10%;
+font-size: 32rpx;
+color: #fca606;
 }
 .img_name1{
   display:flex;
-  align-items:center;
-  justify-content:center;
+  align-items:left;
+  justify-content:left;
   padding-top: 5%;
+  font-size: 30rpx;
   color: #EE9A00;
+}
+.img_tex2{
+  display:flex;
+  align-items:left;
+  justify-content:left;
+  padding-top: 5%;
+  font-size: 30rpx;
 }
 .delbutton
 {
