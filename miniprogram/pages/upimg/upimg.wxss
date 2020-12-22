@@ -64,7 +64,7 @@
   text-align: center;
 }
 .detailinput{
-  
+  height: 100rpx;
   border: 2px solid #f4c903;
   width: 80%;
 }
