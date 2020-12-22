@@ -28,6 +28,7 @@
  
 
   <view class="body3">
+    描述:
     <textarea class="detailinput" 
       placeholder="输入您对菜的描述"
       bindinput="bindTextAreaBlur"

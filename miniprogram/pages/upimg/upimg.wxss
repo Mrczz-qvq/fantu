@@ -64,9 +64,10 @@
   text-align: center;
 }
 .detailinput{
-  height: 100rpx;
+  height: 50rpx;
   border: 2px solid #f4c903;
   width: 80%;
+  line-height: 50rpx;
 }
 .wordwrap {
   position: absolute;
