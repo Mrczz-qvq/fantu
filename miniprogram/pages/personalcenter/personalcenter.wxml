@@ -9,10 +9,7 @@
 </view>
 
 <view wx:if="{{!isShowUserName}}">
-	<view class='b2 float color text' catchtap='tip'>
-		<image src="../../images/personalcenter/set.png" class="image"></image>
-		<text class="text1">偏好设置</text>
-	</view>
+
 	<view class='b2 float color text' catchtap='tip'>
 		<image src="../../images/personalcenter/like.png" class="image"></image>
 		<text class="text1">我的喜好</text>
@@ -25,10 +22,7 @@
 
 <view wx:if="{{isShowUserName}}">
 	
-	<view class='b2 float color text' catchtap='tipp'>
-		 <image src="../../images/personalcenter/set.png" class="image"></image>
-		 <text class="text1">偏好设置</text>
-	</view>
+
 	<view class='b2 float color text' catchtap='tolike'>
 		 <image src="../../images/personalcenter/like.png" class="image"></image>
 		 <text class="text1">我的喜好</text>
