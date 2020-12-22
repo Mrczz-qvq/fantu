@@ -1,8 +1,11 @@
+page{
+  background-color:  #FFE2C8;
+}
 .text1{
   font-size: x-large;
 }
 .upimg{
-  width: 30vw;
+  width: 10vw;
   
 }
 .ihead{
@@ -46,7 +49,7 @@
   vertical-align: center; /**垂直居中*/
   justify-content: center; /**内容居中*/
   font-size: medium;
-  margin-top: 20rpx;
+  margin-top: 50rpx;
 }
 .btnup{       
   margin: 0px auto;  
@@ -55,7 +58,7 @@
 .btnview{
   width: 100%;
   bottom: 0%;
-  margin-top: 30rpx;
+  margin-top: 60rpx;
 }
 .nameinput{
   height: 80rpx; 
@@ -64,10 +67,10 @@
   text-align: center;
 }
 .detailinput{
-  height: 50rpx;
+  height: 180rpx;
   border: 2px solid #f4c903;
   width: 80%;
-  line-height: 50rpx;
+  font-size: x-large;
 }
 .wordwrap {
   position: absolute;
