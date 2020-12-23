@@ -104,6 +104,8 @@ Page({
   
         }
       })
-      this.onload()
+      wx.navigateTo({
+        url: '../../personalcenter/myupload/myupload',
+      })
   }
 })

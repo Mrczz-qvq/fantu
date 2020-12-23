@@ -7,25 +7,45 @@
 
 <view  wx:for="{{goods}}" wx:key="*this" style="width:100%">
   
-  <view class="goodslist">
+
+
     
-    <image bindtap='goshop' data-text='{{item.store}}' data-num='{{item.canteennum}}' src='{{item.img_src}}' class="goodslistmsg"></image>
-    <view class="list2">
-      <text class="goodsp" >{{item.store}}</text>
-      <text class="img_name1">{{item.img_name}}</text>
-      <text class="img_tex2">{{item.img_tex2}}</text>
+    
+    <view class="goodslist">
+
+      <view style="width:30%">
+          <image bindtap='goshop'  data-text='{{item.store}}' data-num='{{item.canteennum}}' src='{{item.img_src}}' class="goodslistmsg"></image>
+      </view>
+    <view style="width:5%">
+
     </view>
-    <view style="position:absolute;right:0px;width:60px;height:110px" >
-      <view wx:if="{{item.isaudit==false}}"> 
+
+      <view class="list2" style="width:60%">
+        <text class="goodsp" >{{item.store}}</text>
+        <text class="img_name1">{{item.img_name}}</text>
+        <text class="img_tex2">{{item.img_tex2}}</text>
+      </view>
+
+        
+
+  <view wx:if="{{item.isaudit==false}}" class="isaudit" style="width:20%"> 
+ 
+    <view wx:if="{{item.isaudit==false}}"> 
         <text wx:if="{{item.isaudit==false}}">未审核</text>
       </view>
       <view wx:if="{{item.isaudit==true}}">
-        <text style="position:absolute;top:36%; right:20%;">已审核</text>
+        <text style="right:20%;">已审核</text>
       </view>
-      <image wx:if="{{item.isaudit==false}}" bindtap='dellove'  data-index='{{item.img_name}}' src="../../../images/search/del.png" class="delimg" style="position:absolute;top:36%; right:20%;"></image>
-    
-   </view>
+      <image wx:if="{{item.isaudit==false}}" bindtap='dellove'  data-index='{{item.img_name}}' src="../../../images/personalcenter/del.png" class="delimg" ></image>
+</view>
+
+
+     
+
+
   </view>
+
+ 
 
 </view>
  </scroll-view>

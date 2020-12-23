@@ -85,6 +85,7 @@ padding-bottom: 6px;
   display: flex;
   /*row 横向  column 列表  */
   width: 100%;
+  height: auto;
   flex-direction: row;
 }
 .list2 {
@@ -96,29 +97,35 @@ padding-bottom: 6px;
   flex-direction: column;
 }
 .goods_detail_title {
-  padding: 10px 0;
-  font-size: 14px;
+  padding-left: 5%;
+  font-size: 40rpx;
 }
 .goodslistmsg{
   height: 100px;
   width: 120px;
-  padding-top: 6px;
-  padding-right: 6px;
-  padding-bottom: 6px;
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
   padding-left: 8px;
-  padding-right: 50px;
+  align-items: center;
+  display: flex;
 }
 .goodsname{
   display:flex;
-align-items:center;
-justify-content:center;
-padding-top: 20%;
+  color: rgb(245, 171, 122);
+  align-items: left;
+justify-content:left;
+padding-top: 10%;
+}
+.in{
+  margin: auto;
 }
 .goodsp{
+  width: 100%;
   display:flex;
-align-items:center;
-justify-content:center;
-padding-top: 10%;
+  align-items: left;
+justify-content:left;
+padding-top: 8%;
 }
 .goods_bottom {
   height: 50px;

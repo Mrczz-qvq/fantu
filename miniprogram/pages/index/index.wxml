@@ -15,7 +15,7 @@
             授权登录
         </button>
         <button class='bottom' type='primary' type="primary" lang="zh_CN" bindtap="inside">
-            暂不授权 直接进入
+            暂不授权
         </button>
     </view>
     <view wx:else>请升级微信版本</view>

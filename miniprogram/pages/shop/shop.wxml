@@ -29,10 +29,21 @@
   <view wx:if="{{goods.length>0}}"> 
     <view  wx:for="{{goods}}" wx:key="*this">
       <view class="goodslist" bindtap="gototalk" data-dishname="{{item.img_tex1}}" data-dishid="{{item._id}}">
-          <image src='{{item.img_src}}' style='width:150px;height:112px;'class="goodslistmsg"></image>
-          <view class="list2"  style='width:150px;height:112px'>
-            <text class="goodsname" style='font-size:40rpx;'>{{item.img_name}}</text>
-            <text class="goodsp" style='font-size:30rpx;'>{{item.img_tex2}}</text>
+        <view style="width:35%">
+             <image src='{{item.img_src}}' class="goodslistmsg"></image>
+        </view>
+       <view style="width:8%">
+
+       </view>
+          <view class="list2"  style='57%'>
+      
+                 <text class="goodsname" style='font-size:35rpx;'>{{item.img_name}}</text>
+          
+              <text class="goodsp" style='font-size:28rpx;'>{{item.img_tex2}}</text>
+        
+         
+        
+            
           </view>
         
       </view>
